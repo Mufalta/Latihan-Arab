@@ -637,12 +637,12 @@ function toggleMode() {
 function getIsimIsyarahFixed(gender, type) {
   if (gender === "m") {
     return type === "near"
-      ? { id: "ini", ar: "هذا" }
-      : { id: "itu", ar: "ذلك" };
+      ? { id: "Ini", ar: "هذا" }
+      : { id: "Itu", ar: "ذلك" };
   } else {
     return type === "near"
-      ? { id: "ini", ar: "هذه" }
-      : { id: "itu", ar: "تلك" };
+      ? { id: "Ini", ar: "هذه" }
+      : { id: "Itu", ar: "تلك" };
   }
 }
 

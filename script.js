@@ -375,17 +375,14 @@ function pick(arr) {
 // ======================
 function generateSentence() {
   if (mode === "noun") {
-    if (mode !== "noun") {
-      index = 0;
-      shuffle(pool);
-    } else {
-      nounIndex = 0;
+    if (nounIndex >= nounPool.length) {
       shuffle(nounPool);
+      nounIndex = 0;
     }
-    
+  
     const item = nounPool[nounIndex];
     nounIndex++;
-    
+  
     const noun = item.noun;
     const isyarah = getIsimIsyarahFixed(noun.gender, item.type);
   
@@ -396,7 +393,6 @@ function generateSentence() {
   
     document.getElementById("question").innerText = sentenceId;
   
-    // 🔥 LABEL KHUSUS NOUN
     const labelText = noun.gender === "m" ? "mudzakkar" : "muannats";
     document.getElementById("label").innerText = labelText;
   

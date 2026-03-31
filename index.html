@@ -2,22 +2,164 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Latihan Bahasa Arab</title>
+
+  <!-- FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Naskh+Arabic&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0f172a;
+      color: white;
+    
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    
+      height: 100dvh;
+    }
+    
+    .app {
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
+      padding: 16px;
+      transform: translateY(-5vh);
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 25px;
+      font-weight: 800;
+      color: #22c55e;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 30px 25px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      animation: pop 0.3s ease;
+    }
+
+    @keyframes pop {
+      from { transform: scale(0.96); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    #question {
+      font-size: 20px;
+      margin: 20px 0 12px;
+      font-weight: 600;
+      color: #e2e8f0;
+    }
+
+    #answer {
+      font-size: 32px;
+      margin: 25px 0;
+      color: #22c55e;
+      font-family: 'Noto Naskh Arabic', serif;
+    }
+
+    .answer-box {
+      background: #0f172a;
+      border-radius: 12px;
+      padding: 15px;
+      margin-top: 20px;
+      border: 1px solid #334155;
+    }
+
+    .label {
+      display: inline-block;
+      padding: 4px 10px;
+      font-size: 12px;
+      background: #334155;
+      border-radius: 999px;
+      margin-top: 8px;
+      margin-bottom: 15px;
+    }
+
+    .buttons {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    button {
+      padding: 14px;
+      border-radius: 14px;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+    }
+
+    .generate {
+      background: #22c55e;
+      color: #022c22;
+    }
+
+    .answer-btn {
+      background: #334155;
+      color: #e2e8f0;
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 12px;
+      width: 100%;
+      text-align: center;
+      font-size: 12px;
+      color: #94a3b8;
+      opacity: 0.6;
+    }
+  </style>
 </head>
+
 <body>
 
-  <h1>Latihan Bahasa Arab</h1>
+  <div class="app">
+    <h1>Latihan Bahasa Arab</h1>
 
-  <!-- Soal -->
-  <p id="question">Klik "Buat Kalimat"</p>
+    <div class="card">
 
-  <!-- Jawaban -->
-  <p id="answer" style="display:none;"></p>
+      <!-- Soal -->
+      <div id="question">Klik "Buat Kalimat"</div>
 
-  <!-- Tombol -->
-  <button onclick="generateSentence()">Buat Kalimat</button>
-  <button onclick="showAnswer()">Lihat Jawaban</button>
-  <button onclick="toggleMode()" id="modeBtn">Mode: Madhi</button>
+      <!-- Jawaban -->
+      <div class="answer-box" id="answer" style="display:none;"></div>
+
+      <!-- Label (tunggal, jamak, dll) -->
+      <div id="label" class="label"></div>
+
+      <!-- Tombol -->
+      <div class="buttons">
+        <button class="generate" onclick="generateSentence()">Buat Kalimat</button>
+        <button class="answer-btn" onclick="showAnswer()">Lihat Jawaban</button>
+        <button class="answer-btn" onclick="toggleMode()" id="modeBtn">
+          Mode: Fi'il Madhi
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    Built by Falta
+  </div>
 
   <script src="script.js"></script>
 

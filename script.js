@@ -5,22 +5,22 @@ let current = "";
 // SUBJECT
 // ======================
 const subjects = [
-  { key: "ana", ar: "أنا", id: "saya", label: "tunggal" },
-  { key: "nahnu", ar: "نحن", id: "kami", label: "jamak" },
+  { key: "ana", ar: "أنا", id: "Saya", label: "tunggal" },
+  { key: "nahnu", ar: "نحن", id: "Kami", label: "jamak" },
 
-  { key: "anta", ar: "أنتَ", id: "kamu", label: "tunggal pria" },
-  { key: "anti", ar: "أنتِ", id: "kamu", label: "tunggal wanita" },
-  { key: "antuma_m", ar: "أنتما", id: "kalian", label: "ganda pria" },
-  { key: "antuma_f", ar: "أنتما", id: "kalian", label: "ganda wanita" },
-  { key: "antum", ar: "أنتم", id: "kalian", label: "jamak pria" },
-  { key: "antunna", ar: "أنتنّ", id: "kalian", label: "jamak wanita" },
+  { key: "anta", ar: "أنتَ", id: "Kamu", label: "tunggal pria" },
+  { key: "anti", ar: "أنتِ", id: "Kamu", label: "tunggal wanita" },
+  { key: "antuma_m", ar: "أنتما", id: "Kalian", label: "ganda pria" },
+  { key: "antuma_f", ar: "أنتما", id: "Kalian", label: "ganda wanita" },
+  { key: "antum", ar: "أنتم", id: "Kalian", label: "jamak pria" },
+  { key: "antunna", ar: "أنتنّ", id: "Kalian", label: "jamak wanita" },
 
-  { key: "huwa", ar: "هو", id: "dia", label: "tunggal pria" },
-  { key: "hiya", ar: "هي", id: "dia", label: "tunggal wanita" },
-  { key: "huma_m", ar: "هما", id: "mereka", label: "ganda pria" },
-  { key: "huma_f", ar: "هما", id: "mereka", label: "ganda wanita" },
-  { key: "hum", ar: "هم", id: "mereka", label: "jamak pria" },
-  { key: "hunna", ar: "هنّ", id: "mereka", label: "jamak wanita" }
+  { key: "huwa", ar: "هو", id: "Dia", label: "tunggal pria" },
+  { key: "hiya", ar: "هي", id: "Dia", label: "tunggal wanita" },
+  { key: "huma_m", ar: "هما", id: "Mereka", label: "ganda pria" },
+  { key: "huma_f", ar: "هما", id: "Mereka", label: "ganda wanita" },
+  { key: "hum", ar: "هم", id: "Mereka", label: "jamak pria" },
+  { key: "hunna", ar: "هنّ", id: "Mereka", label: "jamak wanita" }
 ];
 
 // ======================

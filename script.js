@@ -433,7 +433,7 @@ function toggleMode() {
   mode = mode === "madhi" ? "mudhari" : "madhi";
 
   const btn = document.getElementById("modeBtn");
-  btn.innerText = "Mode: " + (mode === "madhi" ? "Fi'il Madhi" : "Fi'il Mudhari'");
+  btn.innerText = (mode === "madhi" ? "Fi'il Madhi" : "Fi'il Mudhari'");
 
   index = 0;
   shuffle(pool);

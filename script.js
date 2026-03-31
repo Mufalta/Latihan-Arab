@@ -351,7 +351,124 @@ const verbs = [
       hum: "يصبرون",
       hunna: "يصبرن"
     }
-  }
+  },
+  {
+    key: "rafasa",
+    id_present: "menendang",
+    id_past: "telah menendang",
+  
+    past: {
+      ana: "رفستُ",
+      nahnu: "رفسنا",
+      anta: "رفستَ",
+      anti: "رفستِ",
+      antuma_m: "رفستما",
+      antuma_f: "رفستما",
+      antum: "رفستم",
+      antunna: "رفستنّ",
+      huwa: "رفسَ",
+      hiya: "رفستْ",
+      huma_m: "رفسا",
+      huma_f: "رفستا",
+      hum: "رفسوا",
+      hunna: "رفسنَ"
+    },
+  
+    present: {
+      ana: "أرفس",
+      nahnu: "نرفس",
+      anta: "ترفس",
+      anti: "ترفسين",
+      antuma_m: "ترفسان",
+      antuma_f: "ترفسان",
+      antum: "ترفسون",
+      antunna: "يرفسن",
+      huwa: "يرفس",
+      hiya: "ترفس",
+      huma_m: "يرفسان",
+      huma_f: "ترفسان",
+      hum: "يرفسون",
+      hunna: "يرفسن"
+    }
+  },
+  {
+    key: "amsaka",
+    id_present: "memegang",
+    id_past: "telah memegang",
+  
+    past: {
+      ana: "أمسكتُ",
+      nahnu: "أمسكنا",
+      anta: "أمسكتَ",
+      anti: "أمسكتِ",
+      antuma_m: "أمسكتما",
+      antuma_f: "أمسكتما",
+      antum: "أمسكتم",
+      antunna: "أمسكتنّ",
+      huwa: "أمسكَ",
+      hiya: "أمسكتْ",
+      huma_m: "أمسكا",
+      huma_f: "أمسكتا",
+      hum: "أمسكوا",
+      hunna: "أمسكنَ"
+    },
+  
+    present: {
+      ana: "أمسك",
+      nahnu: "نمسك",
+      anta: "تمسك",
+      anti: "تمسكين",
+      antuma_m: "تمسكان",
+      antuma_f: "تمسكان",
+      antum: "تمسكون",
+      antunna: "يمسكن",
+      huwa: "يمسك",
+      hiya: "تمسك",
+      huma_m: "يمسكان",
+      huma_f: "تمسكان",
+      hum: "يمسكون",
+      hunna: "يمسكن"
+    }
+  },
+  {
+    key: "sakana",
+    id_present: "diam",
+    id_past: "telah diam",
+  
+    past: {
+      ana: "سكنتُ",
+      nahnu: "سكنّا",
+      anta: "سكنتَ",
+      anti: "سكنتِ",
+      antuma_m: "سكنتما",
+      antuma_f: "سكنتما",
+      antum: "سكنتم",
+      antunna: "سكنتنّ",
+      huwa: "سكنَ",
+      hiya: "سكنتْ",
+      huma_m: "سكنا",
+      huma_f: "سكنتا",
+      hum: "سكنوا",
+      hunna: "سكنَّ"
+    },
+  
+    present: {
+      ana: "أسكن",
+      nahnu: "نسكن",
+      anta: "تسكن",
+      anti: "تسكنين",
+      antuma_m: "تسكنان",
+      antuma_f: "تسكنان",
+      antum: "تسكنون",
+      antunna: "يسكنّ",
+      huwa: "يسكن",
+      hiya: "تسكن",
+      huma_m: "يسكنان",
+      huma_f: "تسكنان",
+      hum: "يسكنون",
+      hunna: "يسكنّ"
+    }
+  },
 ];
 
 // ======================
@@ -360,7 +477,16 @@ const verbs = [
 
 const nouns = [
   { id: "buku", ar: "كتاب", gender: "m" },
-  { id: "mobil", ar: "سيارة", gender: "f" }
+  { id: "mobil", ar: "سيارة", gender: "f" },
+  { id: "papan tulis", ar: "سبورة", gender: "f" },
+  { id: "karpet", ar: "بساط", gender: "m" },
+  { id: "guru", ar: "مدرس", gender: "m" },
+  { id: "teknisi", ar: "فني", gender: "m" },
+  { id: "dokter", ar: "طبيب", gender: "m" },
+  { id: "murid", ar: "طالب", gender: "m" },
+  { id: "matahari", ar: "شمس", gender: "f" },
+  { id: "masjid", ar: "مسجد", gender: "m" },
+  { id: "ustadz", ar: "أستاذ", gender: "m" }
 ];
 
 // ======================

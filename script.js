@@ -476,17 +476,18 @@ const verbs = [
 // ======================
 
 const nouns = [
-  { id: "buku", ar: "كتاب", gender: "m" },
-  { id: "mobil", ar: "سيارة", gender: "f" },
-  { id: "papan tulis", ar: "سبورة", gender: "f" },
-  { id: "karpet", ar: "بساط", gender: "m" },
-  { id: "guru", ar: "مدرس", gender: "m" },
-  { id: "insinyur", ar: "مهندس", gender: "m" },
-  { id: "dokter", ar: "طبيب", gender: "m" },
-  { id: "murid", ar: "طالب", gender: "m" },
-  { id: "matahari", ar: "شمس", gender: "f" },
-  { id: "masjid", ar: "مسجد", gender: "m" },
-  { id: "ustadz", ar: "أستاذ", gender: "m" }
+  { id: "buku", ar: "كتاب", gender: "m", type: "object" },
+  { id: "mobil", ar: "سيارة", gender: "f", type: "object" },
+  { id: "papan tulis", ar: "سبورة", gender: "f", type: "object" },
+  { id: "karpet", ar: "بساط", gender: "m", type: "object" },
+  { id: "guru", ar: "مدرس", gender: "m", type: "profession" },
+  { id: "dokter", ar: "طبيب", gender: "m", type: "profession" },
+  { id: "teknisi", ar: "فني", gender: "m", type: "profession" },
+  { id: "insinyur", ar: "مهندس", gender: "m", type: "profession" },
+  { id: "murid", ar: "طالب", gender: "m", type: "profession" },
+  { id: "ustadz", ar: "أستاذ", gender: "m", type: "profession" },
+  { id: "matahari", ar: "شمس", gender: "f", type: "object" },
+  { id: "masjid", ar: "مسجد", gender: "m", type: "object" }
 ];
 
 // ======================
@@ -590,10 +591,32 @@ function buildNounPool() {
 
   nouns.forEach(noun => {
     ["near", "far"].forEach(type => {
-      nounPool.push({
-        noun,
-        type
-      });
+      if (noun.type !== "profession") {
+        nounPool.push({
+          noun,
+          type
+        });
+      }
+      if (noun.type === "profession") {
+        // pria
+        nounPool.push({
+          noun: {
+            id: noun.id,
+            ar: noun.ar,
+            gender: "m"
+          },
+          type
+        });
+        // wanita
+        nounPool.push({
+          noun: {
+            id: noun.id + " wanita",
+            ar: noun.ar + "ة",
+            gender: "f"
+          },
+          type
+        });
+      }
     });
   });
 
@@ -644,6 +667,10 @@ function getIsimIsyarahFixed(gender, type) {
       ? { id: "Ini", ar: "هذه" }
       : { id: "Itu", ar: "تلك" };
   }
+}
+
+function toFeminine(ar) {
+  return ar + "ة";
 }
 
 buildPool();

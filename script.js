@@ -1,4 +1,6 @@
-let mode = "madhi";
+const modes = ["madhi", "mudhari", "noun"];
+let modeIndex = 0;
+let mode = modes[modeIndex];
 let current = "";
 let pool = [];
 let index = 0;
@@ -351,6 +353,15 @@ const verbs = [
 ];
 
 // ======================
+// KATA BENDA
+// ======================
+
+const nouns = [
+  { id: "buku", ar: "كتاب", gender: "m" },
+  { id: "mobil", ar: "سيارة", gender: "f" }
+];
+
+// ======================
 // RANDOM
 // ======================
 function pick(arr) {
@@ -361,6 +372,27 @@ function pick(arr) {
 // GENERATE
 // ======================
 function generateSentence() {
+  if (mode === "noun") {
+    const noun = pick(nouns);
+    const isyarah = getIsimIsyarah(noun.gender);
+  
+    const sentenceId = isyarah.id + " " + noun.id;
+    const sentenceAr = isyarah.ar + " " + noun.ar;
+  
+    current = sentenceAr;
+  
+    document.getElementById("question").innerText = sentenceId;
+  
+    // 🔥 LABEL KHUSUS NOUN
+    const labelText = noun.gender === "m" ? "mudzakkar" : "muannats";
+    document.getElementById("label").innerText = labelText;
+  
+    document.getElementById("answer").innerText = "";
+    document.getElementById("answer").style.display = "none";
+  
+    return;
+  }
+  
   if (index >= pool.length) {
     shuffle(pool);
     index = 0;
@@ -430,13 +462,40 @@ function showAnswer() {
 // TOGGLE MODE
 // ======================
 function toggleMode() {
-  mode = mode === "madhi" ? "mudhari" : "madhi";
+  modeIndex = (modeIndex + 1) % modes.length;
+  mode = modes[modeIndex];
 
   const btn = document.getElementById("modeBtn");
-  btn.innerText = (mode === "madhi" ? "Fi'il Madhi" : "Fi'il Mudhari'");
+
+  if (mode === "madhi") {
+    btn.innerText = "Fi'il Madhi";
+  } else if (mode === "mudhari") {
+    btn.innerText = "Fi'il Mudhari'";
+  } else {
+    btn.innerText = "Kata Benda";
+  }
 
   index = 0;
   shuffle(pool);
+}
+
+// ======================
+// FUNGSI LAIN
+// ======================
+
+function getIsimIsyarah(gender) {
+  const types = ["near", "far"];
+  const type = pick(types);
+
+  if (gender === "m") {
+    return type === "near"
+      ? { id: "ini", ar: "هذا" }
+      : { id: "itu", ar: "ذلك" };
+  } else {
+    return type === "near"
+      ? { id: "ini", ar: "هذه" }
+      : { id: "itu", ar: "تلك" };
+  }
 }
 
 buildPool();

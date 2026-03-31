@@ -4,6 +4,8 @@ let mode = modes[modeIndex];
 let current = "";
 let pool = [];
 let index = 0;
+let nounPool = [];
+let nounIndex = 0;
 
 // ======================
 // SUBJECT
@@ -373,8 +375,19 @@ function pick(arr) {
 // ======================
 function generateSentence() {
   if (mode === "noun") {
-    const noun = pick(nouns);
-    const isyarah = getIsimIsyarah(noun.gender);
+    if (mode !== "noun") {
+      index = 0;
+      shuffle(pool);
+    } else {
+      nounIndex = 0;
+      shuffle(nounPool);
+    }
+    
+    const item = nounPool[nounIndex];
+    nounIndex++;
+    
+    const noun = item.noun;
+    const isyarah = getIsimIsyarahFixed(noun.gender, item.type);
   
     const sentenceId = isyarah.id + " " + noun.id;
     const sentenceAr = isyarah.ar + " " + noun.ar;
@@ -450,6 +463,22 @@ function buildPool() {
   index = 0;
 }
 
+function buildNounPool() {
+  nounPool = [];
+
+  nouns.forEach(noun => {
+    ["near", "far"].forEach(type => {
+      nounPool.push({
+        noun,
+        type
+      });
+    });
+  });
+
+  shuffle(nounPool);
+  nounIndex = 0;
+}
+
 // ======================
 // SHOW ANSWER
 // ======================
@@ -483,10 +512,7 @@ function toggleMode() {
 // FUNGSI LAIN
 // ======================
 
-function getIsimIsyarah(gender) {
-  const types = ["near", "far"];
-  const type = pick(types);
-
+function getIsimIsyarahFixed(gender, type) {
   if (gender === "m") {
     return type === "near"
       ? { id: "ini", ar: "هذا" }
@@ -499,3 +525,4 @@ function getIsimIsyarah(gender) {
 }
 
 buildPool();
+buildNounPool();

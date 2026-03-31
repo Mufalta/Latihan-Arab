@@ -1,5 +1,7 @@
 let mode = "madhi";
 let current = "";
+let pool = [];
+let index = 0;
 
 // ======================
 // SUBJECT
@@ -26,48 +28,327 @@ const subjects = [
 // ======================
 // KATA KERJA
 // ======================
-const verb = {
-  id_present: "melakukan",
-  id_past: "telah melakukan",
+const verbs = [
+  {
+    key: "jalasa",
+    id_present: "duduk",
+    id_past: "telah duduk",
 
-  past: {
-    ana: "فعلتُ",
-    nahnu: "فعلنا",
+    past: {
+      ana: "جلستُ",
+      nahnu: "جلسنا",
+      anta: "جلستَ",
+      anti: "جلستِ",
+      antuma_m: "جلستما",
+      antuma_f: "جلستما",
+      antum: "جلستم",
+      antunna: "جلستنّ",
+      huwa: "جلسَ",
+      hiya: "جلستْ",
+      huma_m: "جلسا",
+      huma_f: "جلستا",
+      hum: "جلسوا",
+      hunna: "جلسنَ"
+    },
 
-    anta: "فعلتَ",
-    anti: "فعلتِ",
-    antuma_m: "فعلتما",
-    antuma_f: "فعلتما",
-    antum: "فعلتم",
-    antunna: "فعلتنّ",
-
-    huwa: "فعلَ",
-    hiya: "فعلتْ",
-    huma_m: "فعلا",
-    huma_f: "فعلتا",
-    hum: "فعلوا",
-    hunna: "فعلنَ"
+    present: {
+      ana: "أجلس",
+      nahnu: "نجلس",
+      anta: "تجلس",
+      anti: "تجلسين",
+      antuma_m: "تجلسان",
+      antuma_f: "تجلسان",
+      antum: "تجلسون",
+      antunna: "يجلسن",
+      huwa: "يجلس",
+      hiya: "تجلس",
+      huma_m: "يجلسان",
+      huma_f: "تجلسان",
+      hum: "يجلسون",
+      hunna: "يجلسن"
+    }
   },
 
-  present: {
-    ana: "أفعل",
-    nahnu: "نفعل",
+  {
+    key: "nasara",
+    id_present: "menolong",
+    id_past: "telah menolong",
 
-    anta: "تفعل",
-    anti: "تفعلين",
-    antuma_m: "تفعلان",
-    antuma_f: "تفعلان",
-    antum: "تفعلون",
-    antunna: "تفعلن",
+    past: {
+      ana: "نصرتُ",
+      nahnu: "نصرنا",
+      anta: "نصرتَ",
+      anti: "نصرتِ",
+      antuma_m: "نصرتما",
+      antuma_f: "نصرتما",
+      antum: "نصرتم",
+      antunna: "نصرتنّ",
+      huwa: "نصرَ",
+      hiya: "نصرتْ",
+      huma_m: "نصرا",
+      huma_f: "نصرتا",
+      hum: "نصروا",
+      hunna: "نصرنَ"
+    },
 
-    huwa: "يفعل",
-    hiya: "تفعل",
-    huma_m: "يفعلان",
-    huma_f: "تفعلان",
-    hum: "يفعلون",
-    hunna: "يفعلن"
+    present: {
+      ana: "أنصر",
+      nahnu: "ننصر",
+      anta: "تنصر",
+      anti: "تنصرين",
+      antuma_m: "تنصران",
+      antuma_f: "تنصران",
+      antum: "تنصرون",
+      antunna: "ينصرن",
+      huwa: "ينصر",
+      hiya: "تنصر",
+      huma_m: "ينصران",
+      huma_f: "تنصران",
+      hum: "ينصرون",
+      hunna: "ينصرن"
+    }
+  },
+
+  {
+    key: "daraba",
+    id_present: "memukul",
+    id_past: "telah memukul",
+
+    past: {
+      ana: "ضربتُ",
+      nahnu: "ضربنا",
+      anta: "ضربتَ",
+      anti: "ضربتِ",
+      antuma_m: "ضربتما",
+      antuma_f: "ضربتما",
+      antum: "ضربتم",
+      antunna: "ضربتنّ",
+      huwa: "ضربَ",
+      hiya: "ضربتْ",
+      huma_m: "ضربا",
+      huma_f: "ضربتا",
+      hum: "ضربوا",
+      hunna: "ضربنَ"
+    },
+
+    present: {
+      ana: "أضرب",
+      nahnu: "نضرب",
+      anta: "تضرب",
+      anti: "تضربين",
+      antuma_m: "تضربان",
+      antuma_f: "تضربان",
+      antum: "تضربون",
+      antunna: "يضربن",
+      huwa: "يضرب",
+      hiya: "تضرب",
+      huma_m: "يضربان",
+      huma_f: "تضربان",
+      hum: "يضربون",
+      hunna: "يضربن"
+    }
+  },
+
+  {
+    key: "fataha",
+    id_present: "membuka",
+    id_past: "telah membuka",
+
+    past: {
+      ana: "فتحتُ",
+      nahnu: "فتحنا",
+      anta: "فتحتَ",
+      anti: "فتحتِ",
+      antuma_m: "فتحتما",
+      antuma_f: "فتحتما",
+      antum: "فتحتم",
+      antunna: "فتحتنّ",
+      huwa: "فتحَ",
+      hiya: "فتحتْ",
+      huma_m: "فتحا",
+      huma_f: "فتحتا",
+      hum: "فتحوا",
+      hunna: "فتحنَ"
+    },
+
+    present: {
+      ana: "أفتح",
+      nahnu: "نفتح",
+      anta: "تفتح",
+      anti: "تفتحين",
+      antuma_m: "تفتحان",
+      antuma_f: "تفتحان",
+      antum: "تفتحون",
+      antunna: "يفتحن",
+      huwa: "يفتح",
+      hiya: "تفتح",
+      huma_m: "يفتحان",
+      huma_f: "تفتحان",
+      hum: "يفتحون",
+      hunna: "يفتحن"
+    }
+  },
+
+  {
+    key: "akala",
+    id_present: "makan",
+    id_past: "telah makan",
+
+    past: {
+      ana: "أكلتُ",
+      nahnu: "أكلنا",
+      anta: "أكلتَ",
+      anti: "أكلتِ",
+      antuma_m: "أكلتما",
+      antuma_f: "أكلتما",
+      antum: "أكلتم",
+      antunna: "أكلتنّ",
+      huwa: "أكلَ",
+      hiya: "أكلتْ",
+      huma_m: "أكلا",
+      huma_f: "أكلتا",
+      hum: "أكلوا",
+      hunna: "أكلنَ"
+    },
+
+    present: {
+      ana: "آكل",
+      nahnu: "نأكل",
+      anta: "تأكل",
+      anti: "تأكلين",
+      antuma_m: "تأكلان",
+      antuma_f: "تأكلان",
+      antum: "تأكلون",
+      antunna: "يأكلن",
+      huwa: "يأكل",
+      hiya: "تأكل",
+      huma_m: "يأكلان",
+      huma_f: "تأكلان",
+      hum: "يأكلون",
+      hunna: "يأكلن"
+    }
+  },
+
+  {
+    key: "dzahaba",
+    id_present: "pergi",
+    id_past: "telah pergi",
+
+    past: {
+      ana: "ذهبتُ",
+      nahnu: "ذهبنا",
+      anta: "ذهبتَ",
+      anti: "ذهبتِ",
+      antuma_m: "ذهبتما",
+      antuma_f: "ذهبتما",
+      antum: "ذهبتم",
+      antunna: "ذهبتنّ",
+      huwa: "ذهبَ",
+      hiya: "ذهبتْ",
+      huma_m: "ذهبا",
+      huma_f: "ذهبتا",
+      hum: "ذهبوا",
+      hunna: "ذهبنَ"
+    },
+
+    present: {
+      ana: "أذهب",
+      nahnu: "نذهب",
+      anta: "تذهب",
+      anti: "تذهبين",
+      antuma_m: "تذهبان",
+      antuma_f: "تذهبان",
+      antum: "تذهبون",
+      antunna: "يذهبن",
+      huwa: "يذهب",
+      hiya: "تذهب",
+      huma_m: "يذهبان",
+      huma_f: "تذهبان",
+      hum: "يذهبون",
+      hunna: "يذهبن"
+    }
+  },
+
+  {
+    key: "ghadhiba",
+    id_present: "marah",
+    id_past: "telah marah",
+
+    past: {
+      ana: "غضبتُ",
+      nahnu: "غضبنا",
+      anta: "غضبتَ",
+      anti: "غضبتِ",
+      antuma_m: "غضبتما",
+      antuma_f: "غضبتما",
+      antum: "غضبتم",
+      antunna: "غضبتنّ",
+      huwa: "غضبَ",
+      hiya: "غضبتْ",
+      huma_m: "غضبا",
+      huma_f: "غضبتا",
+      hum: "غضبوا",
+      hunna: "غضبنَ"
+    },
+
+    present: {
+      ana: "أغضب",
+      nahnu: "نغضب",
+      anta: "تغضب",
+      anti: "تغضبين",
+      antuma_m: "تغضبان",
+      antuma_f: "تغضبان",
+      antum: "تغضبون",
+      antunna: "يغضبن",
+      huwa: "يغضب",
+      hiya: "تغضب",
+      huma_m: "يغضبان",
+      huma_f: "تغضبان",
+      hum: "يغضبون",
+      hunna: "يغضبن"
+    }
+  },
+
+  {
+    key: "shabara",
+    id_present: "sabar",
+    id_past: "telah sabar",
+
+    past: {
+      ana: "صبرتُ",
+      nahnu: "صبرنا",
+      anta: "صبرتَ",
+      anti: "صبرتِ",
+      antuma_m: "صبرتما",
+      antuma_f: "صبرتما",
+      antum: "صبرتم",
+      antunna: "صبرتنّ",
+      huwa: "صبرَ",
+      hiya: "صبرتْ",
+      huma_m: "صبرا",
+      huma_f: "صبرتا",
+      hum: "صبروا",
+      hunna: "صبرنَ"
+    },
+
+    present: {
+      ana: "أصبر",
+      nahnu: "نصبر",
+      anta: "تصبر",
+      anti: "تصبرين",
+      antuma_m: "تصبران",
+      antuma_f: "تصبران",
+      antum: "تصبرون",
+      antunna: "يصبرن",
+      huwa: "يصبر",
+      hiya: "تصبر",
+      huma_m: "يصبران",
+      huma_f: "تصبران",
+      hum: "يصبرون",
+      hunna: "يصبرن"
+    }
   }
-};
+];
 
 // ======================
 // RANDOM
@@ -80,7 +361,16 @@ function pick(arr) {
 // GENERATE
 // ======================
 function generateSentence() {
-  const subject = pick(subjects);
+  if (index >= pool.length) {
+    shuffle(pool);
+    index = 0;
+  }
+
+  const item = pool[index];
+  index++;
+
+  const subject = item.subject;
+  const verb = item.verb;
 
   let verbAr;
   let verbId;
@@ -92,7 +382,7 @@ function generateSentence() {
     verbAr = verb.present[subject.key];
     verbId = verb.id_present;
   }
-  
+
   const sentenceId = subject.id + " " + verbId;
   const sentenceAr = subject.ar + " " + verbAr;
 
@@ -103,6 +393,29 @@ function generateSentence() {
 
   document.getElementById("answer").innerText = "";
   document.getElementById("answer").style.display = "none";
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+function buildPool() {
+  pool = [];
+
+  subjects.forEach(subject => {
+    verbs.forEach(verb => {
+      pool.push({
+        subject,
+        verb
+      });
+    });
+  });
+
+  shuffle(pool);
+  index = 0;
 }
 
 // ======================
@@ -121,4 +434,9 @@ function toggleMode() {
 
   const btn = document.getElementById("modeBtn");
   btn.innerText = "Mode: " + (mode === "madhi" ? "Fi'il Madhi" : "Fi'il Mudhari'");
+
+  index = 0;
+  shuffle(pool);
 }
+
+buildPool();

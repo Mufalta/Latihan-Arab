@@ -481,7 +481,7 @@ const nouns = [
   { id: "papan tulis", ar: "سبورة", gender: "f" },
   { id: "karpet", ar: "بساط", gender: "m" },
   { id: "guru", ar: "مدرس", gender: "m" },
-  { id: "teknisi", ar: "فني", gender: "m" },
+  { id: "insinyur", ar: "مهندس", gender: "m" },
   { id: "dokter", ar: "طبيب", gender: "m" },
   { id: "murid", ar: "طالب", gender: "m" },
   { id: "matahari", ar: "شمس", gender: "f" },

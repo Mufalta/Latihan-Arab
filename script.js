@@ -482,7 +482,6 @@ const nouns = [
   { id: "karpet", ar: "بساط", gender: "m", type: "object" },
   { id: "guru", ar: "مدرس", gender: "m", type: "profession" },
   { id: "dokter", ar: "طبيب", gender: "m", type: "profession" },
-  { id: "teknisi", ar: "فني", gender: "m", type: "profession" },
   { id: "insinyur", ar: "مهندس", gender: "m", type: "profession" },
   { id: "murid", ar: "طالب", gender: "m", type: "profession" },
   { id: "ustadz", ar: "أستاذ", gender: "m", type: "profession" },

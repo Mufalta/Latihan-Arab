@@ -63,7 +63,7 @@ const verbs = [
       antuma_m: "تجلسان",
       antuma_f: "تجلسان",
       antum: "تجلسون",
-      antunna: "يجلسن",
+      antunna: "تجلسن",
       huwa: "يجلس",
       hiya: "تجلس",
       huma_m: "يجلسان",

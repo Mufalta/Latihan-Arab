@@ -662,7 +662,7 @@ function toggleMode() {
 }
 
 // ======================
-// TOGGLE MODE
+// AUDIO
 // ======================
 
 function speakQuestion(text, label) {
@@ -677,6 +677,16 @@ function speakArabic(text) {
   const utter = new SpeechSynthesisUtterance(text);
   utter.lang = "ar-SA";
   speechSynthesis.speak(utter);
+}
+
+function playQuestion() {
+  if (!currentQuestion) return;
+  speakQuestion(currentQuestion, currentLabel);
+}
+
+function playAnswer() {
+  if (!current) return;
+  speakArabic(current);
 }
 
 // ======================

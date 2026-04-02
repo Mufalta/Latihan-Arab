@@ -460,7 +460,7 @@ const verbs = [
       antuma_m: "تسكنان",
       antuma_f: "تسكنان",
       antum: "تسكنون",
-      antunna: "يسكنّ",
+      antunna: "تسكنّ",
       huwa: "يسكن",
       hiya: "تسكن",
       huma_m: "يسكنان",
@@ -495,6 +495,9 @@ const nouns = [
 function pick(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
+
+let currentQuestion = "";
+let currentLabel = "";
 
 // ======================
 // GENERATE
@@ -590,20 +593,11 @@ function buildNounPool() {
 
   nouns.forEach(noun => {
     ["near", "far"].forEach(type => {
-      if (noun.type !== "profession") {
-        nounPool.push({
-          noun,
-          type
-        });
-      }
       if (noun.type === "profession") {
-        // pria
-        nounPool.push({
-          noun: {
-            id: noun.id,
-            ar: noun.ar,
-            gender: "m"
-          },
+          // split pria & wanita
+        } else {
+          // object biasa
+        }
           type
         });
         // wanita
@@ -629,6 +623,8 @@ function buildNounPool() {
 function showAnswer() {
   document.getElementById("answer").innerText = current;
   document.getElementById("answer").style.display = "block";
+
+  document.getElementById("audioAnswer").style.display = "block";
 }
 
 // ======================
@@ -650,6 +646,24 @@ function toggleMode() {
 
   index = 0;
   shuffle(pool);
+}
+
+// ======================
+// TOGGLE MODE
+// ======================
+
+function speakQuestion(text, label) {
+  const utter = new SpeechSynthesisUtterance(
+    text + ". " + label
+  );
+  utter.lang = "id-ID";
+  speechSynthesis.speak(utter);
+}
+
+function speakArabic(text) {
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.lang = "ar-SA";
+  speechSynthesis.speak(utter);
 }
 
 // ======================

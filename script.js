@@ -732,7 +732,7 @@ function getIsimIsyarahFixed(gender, distance) {
 }
 
 function toFeminine(ar) {
-  return ar + "ة";
+  return ar + "ةٌ";
 }
 
 buildPool();

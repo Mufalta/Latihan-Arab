@@ -682,8 +682,10 @@ function speakQuestion(text, label) {
 }
 
 function speakArabic(text) {
-  const utter = new SpeechSynthesisUtterance(text);
-  utter.lang = "ar-SA";
+  const utter = new SpeechSynthesisUtterance(fixed);
+
+  const voices = speechSynthesis.getVoices();
+  const arabVoice = voices.find(v => v.lang.includes("ar"));
 
   speechSynthesis.cancel();
   speechSynthesis.speak(utter);

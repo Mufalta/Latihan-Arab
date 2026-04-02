@@ -170,6 +170,25 @@
     button:hover {
       transform: translateY(-1px);
     }
+
+    #questionWrap, #answerWrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    .audio-icon {
+      cursor: pointer;
+      font-size: 18px;
+      opacity: 0.7;
+      transition: 0.2s;
+    }
+    
+    .audio-icon:hover {
+      opacity: 1;
+      transform: scale(1.2);
+    }
   </style>
 </head>
 
@@ -181,10 +200,16 @@
     <div class="card">
 
       <!-- Soal -->
-      <div id="question">Klik "Buat Kalimat"</div>
+      <div id="questionWrap">
+        <span class="audio-icon" onclick="playQuestion()">🔊</span>
+        <span id="question">Klik "Buat Kalimat"</span>
+      </div>
 
       <!-- Jawaban -->
-      <div class="answer-box" id="answer" style="display:none;"></div>
+      <div class="answer-box" id="answerWrap" style="display:none;">
+        <span class="audio-icon" onclick="playAnswer()">🔊</span>
+        <span id="answer"></span>
+      </div>
 
       <!-- Label (tunggal, jamak, dll) -->
       <div id="label" class="label"></div>
@@ -195,13 +220,6 @@
         <button class="answer-btn" onclick="showAnswer()">Lihat Jawaban</button>
         <button class="answer-btn" onclick="toggleMode()" id="modeBtn">
           Fi'il Madhi
-        </button>
-        <button class="answer-btn" onclick="playQuestion()">
-          🔊
-        </button>
-        
-        <button class="answer-btn" onclick="playAnswer()" id="audioAnswer" style="display:none;">
-          🔊
         </button>
       </div>
 

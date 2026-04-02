@@ -681,11 +681,24 @@ function speakQuestion(text, label) {
   speechSynthesis.speak(utter);
 }
 
+let voices = [];
+
+speechSynthesis.onvoiceschanged = () => {
+  voices = speechSynthesis.getVoices();
+};
+
 function speakArabic(text) {
-  const utter = new SpeechSynthesisUtterance(fixed);
+  const utter = new SpeechSynthesisUtterance(text);
 
   const voices = speechSynthesis.getVoices();
   const arabVoice = voices.find(v => v.lang.includes("ar"));
+
+  if (arabVoice) {
+    utter.voice = arabVoice;
+  }
+
+  utter.lang = "ar-SA";
+  utter.rate = 0.9;
 
   speechSynthesis.cancel();
   speechSynthesis.speak(utter);

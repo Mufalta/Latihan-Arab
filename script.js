@@ -11,22 +11,22 @@ let nounIndex = 0;
 // SUBJECT
 // ======================
 const subjects = [
-  { key: "ana", ar: "أنا", id: "Saya", label: "tunggal" },
-  { key: "nahnu", ar: "نحن", id: "Kami", label: "jamak" },
+  { key: "ana", ar: "أَنَا", id: "Saya", label: "tunggal" },
+  { key: "nahnu", ar: "نَحْنُ", id: "Kami", label: "jamak" },
 
-  { key: "anta", ar: "أنتَ", id: "Kamu", label: "tunggal pria" },
-  { key: "anti", ar: "أنتِ", id: "Kamu", label: "tunggal wanita" },
-  { key: "antuma_m", ar: "أنتما", id: "Kalian", label: "ganda pria" },
-  { key: "antuma_f", ar: "أنتما", id: "Kalian", label: "ganda wanita" },
-  { key: "antum", ar: "أنتم", id: "Kalian", label: "jamak pria" },
-  { key: "antunna", ar: "أنتنّ", id: "Kalian", label: "jamak wanita" },
+  { key: "anta", ar: "أَنْتَ", id: "Kamu", label: "tunggal pria" },
+  { key: "anti", ar: "أَنْتِ", id: "Kamu", label: "tunggal wanita" },
+  { key: "antuma_m", ar: "أَنْتُمَا", id: "Kalian", label: "ganda pria" },
+  { key: "antuma_f", ar: "أَنْتُمَا", id: "Kalian", label: "ganda wanita" },
+  { key: "antum", ar: "أَنْتُمْ", id: "Kalian", label: "jamak pria" },
+  { key: "antunna", ar: "أَنْتُنَّ", id: "Kalian", label: "jamak wanita" },
 
-  { key: "huwa", ar: "هو", id: "Dia", label: "tunggal pria" },
-  { key: "hiya", ar: "هي", id: "Dia", label: "tunggal wanita" },
-  { key: "huma_m", ar: "هما", id: "Mereka", label: "ganda pria" },
-  { key: "huma_f", ar: "هما", id: "Mereka", label: "ganda wanita" },
-  { key: "hum", ar: "هم", id: "Mereka", label: "jamak pria" },
-  { key: "hunna", ar: "هنّ", id: "Mereka", label: "jamak wanita" }
+  { key: "huwa", ar: "هُوَ", id: "Dia", label: "tunggal pria" },
+  { key: "hiya", ar: "هِيَ", id: "Dia", label: "tunggal wanita" },
+  { key: "huma_m", ar: "هُمَا", id: "Mereka", label: "ganda pria" },
+  { key: "huma_f", ar: "هُمَا", id: "Mereka", label: "ganda wanita" },
+  { key: "hum", ar: "هُمْ", id: "Mereka", label: "jamak pria" },
+  { key: "hunna", ar: "هُنَّ", id: "Mereka", label: "jamak wanita" }
 ];
 
 // ======================
@@ -37,39 +37,39 @@ const verbs = [
     key: "jalasa",
     id_present: "duduk",
     id_past: "telah duduk",
-
+  
     past: {
-      ana: "جلستُ",
-      nahnu: "جلسنا",
-      anta: "جلستَ",
-      anti: "جلستِ",
-      antuma_m: "جلستما",
-      antuma_f: "جلستما",
-      antum: "جلستم",
-      antunna: "جلستنّ",
-      huwa: "جلسَ",
-      hiya: "جلستْ",
-      huma_m: "جلسا",
-      huma_f: "جلستا",
-      hum: "جلسوا",
-      hunna: "جلسنَ"
+      ana: "جَلَسْتُ",
+      nahnu: "جَلَسْنَا",
+      anta: "جَلَسْتَ",
+      anti: "جَلَسْتِ",
+      antuma_m: "جَلَسْتُمَا",
+      antuma_f: "جَلَسْتُمَا",
+      antum: "جَلَسْتُمْ",
+      antunna: "جَلَسْتُنَّ",
+      huwa: "جَلَسَ",
+      hiya: "جَلَسَتْ",
+      huma_m: "جَلَسَا",
+      huma_f: "جَلَسَتَا",
+      hum: "جَلَسُوا",
+      hunna: "جَلَسْنَ"
     },
-
+  
     present: {
-      ana: "أجلس",
-      nahnu: "نجلس",
-      anta: "تجلس",
-      anti: "تجلسين",
-      antuma_m: "تجلسان",
-      antuma_f: "تجلسان",
-      antum: "تجلسون",
-      antunna: "تجلسن",
-      huwa: "يجلس",
-      hiya: "تجلس",
-      huma_m: "يجلسان",
-      huma_f: "تجلسان",
-      hum: "يجلسون",
-      hunna: "يجلسن"
+      ana: "أَجْلِسُ",
+      nahnu: "نَجْلِسُ",
+      anta: "تَجْلِسُ",
+      anti: "تَجْلِسِينَ",
+      antuma_m: "تَجْلِسَانِ",
+      antuma_f: "تَجْلِسَانِ",
+      antum: "تَجْلِسُونَ",
+      antunna: "تَجْلِسْنَ",
+      huwa: "يَجْلِسُ",
+      hiya: "تَجْلِسُ",
+      huma_m: "يَجْلِسَانِ",
+      huma_f: "تَجْلِسَانِ",
+      hum: "يَجْلِسُونَ",
+      hunna: "يَجْلِسْنَ"
     }
   },
 
@@ -77,39 +77,39 @@ const verbs = [
     key: "nasara",
     id_present: "menolong",
     id_past: "telah menolong",
-
+  
     past: {
-      ana: "نصرتُ",
-      nahnu: "نصرنا",
-      anta: "نصرتَ",
-      anti: "نصرتِ",
-      antuma_m: "نصرتما",
-      antuma_f: "نصرتما",
-      antum: "نصرتم",
-      antunna: "نصرتنّ",
-      huwa: "نصرَ",
-      hiya: "نصرتْ",
-      huma_m: "نصرا",
-      huma_f: "نصرتا",
-      hum: "نصروا",
-      hunna: "نصرنَ"
+      ana: "نَصَرْتُ",
+      nahnu: "نَصَرْنَا",
+      anta: "نَصَرْتَ",
+      anti: "نَصَرْتِ",
+      antuma_m: "نَصَرْتُمَا",
+      antuma_f: "نَصَرْتُمَا",
+      antum: "نَصَرْتُمْ",
+      antunna: "نَصَرْتُنَّ",
+      huwa: "نَصَرَ",
+      hiya: "نَصَرَتْ",
+      huma_m: "نَصَرَا",
+      huma_f: "نَصَرَتَا",
+      hum: "نَصَرُوا",
+      hunna: "نَصَرْنَ"
     },
-
+  
     present: {
-      ana: "أنصر",
-      nahnu: "ننصر",
-      anta: "تنصر",
-      anti: "تنصرين",
-      antuma_m: "تنصران",
-      antuma_f: "تنصران",
-      antum: "تنصرون",
-      antunna: "ينصرن",
-      huwa: "ينصر",
-      hiya: "تنصر",
-      huma_m: "ينصران",
-      huma_f: "تنصران",
-      hum: "ينصرون",
-      hunna: "ينصرن"
+      ana: "أَنْصُرُ",
+      nahnu: "نَنْصُرُ",
+      anta: "تَنْصُرُ",
+      anti: "تَنْصُرِينَ",
+      antuma_m: "تَنْصُرَانِ",
+      antuma_f: "تَنْصُرَانِ",
+      antum: "تَنْصُرُونَ",
+      antunna: "تَنْصُرْنَ",
+      huwa: "يَنْصُرُ",
+      hiya: "تَنْصُرُ",
+      huma_m: "يَنْصُرَانِ",
+      huma_f: "تَنْصُرَانِ",
+      hum: "يَنْصُرُونَ",
+      hunna: "يَنْصُرْنَ"
     }
   },
 
@@ -117,39 +117,39 @@ const verbs = [
     key: "daraba",
     id_present: "memukul",
     id_past: "telah memukul",
-
+  
     past: {
-      ana: "ضربتُ",
-      nahnu: "ضربنا",
-      anta: "ضربتَ",
-      anti: "ضربتِ",
-      antuma_m: "ضربتما",
-      antuma_f: "ضربتما",
-      antum: "ضربتم",
-      antunna: "ضربتنّ",
-      huwa: "ضربَ",
-      hiya: "ضربتْ",
-      huma_m: "ضربا",
-      huma_f: "ضربتا",
-      hum: "ضربوا",
-      hunna: "ضربنَ"
+      ana: "ضَرَبْتُ",
+      nahnu: "ضَرَبْنَا",
+      anta: "ضَرَبْتَ",
+      anti: "ضَرَبْتِ",
+      antuma_m: "ضَرَبْتُمَا",
+      antuma_f: "ضَرَبْتُمَا",
+      antum: "ضَرَبْتُمْ",
+      antunna: "ضَرَبْتُنَّ",
+      huwa: "ضَرَبَ",
+      hiya: "ضَرَبَتْ",
+      huma_m: "ضَرَبَا",
+      huma_f: "ضَرَبَتَا",
+      hum: "ضَرَبُوا",
+      hunna: "ضَرَبْنَ"
     },
-
+  
     present: {
-      ana: "أضرب",
-      nahnu: "نضرب",
-      anta: "تضرب",
-      anti: "تضربين",
-      antuma_m: "تضربان",
-      antuma_f: "تضربان",
-      antum: "تضربون",
-      antunna: "يضربن",
-      huwa: "يضرب",
-      hiya: "تضرب",
-      huma_m: "يضربان",
-      huma_f: "تضربان",
-      hum: "يضربون",
-      hunna: "يضربن"
+      ana: "أَضْرِبُ",
+      nahnu: "نَضْرِبُ",
+      anta: "تَضْرِبُ",
+      anti: "تَضْرِبِينَ",
+      antuma_m: "تَضْرِبَانِ",
+      antuma_f: "تَضْرِبَانِ",
+      antum: "تَضْرِبُونَ",
+      antunna: "تَضْرِبْنَ",
+      huwa: "يَضْرِبُ",
+      hiya: "تَضْرِبُ",
+      huma_m: "يَضْرِبَانِ",
+      huma_f: "تَضْرِبَانِ",
+      hum: "يَضْرِبُونَ",
+      hunna: "يَضْرِبْنَ"
     }
   },
 
@@ -157,39 +157,39 @@ const verbs = [
     key: "fataha",
     id_present: "membuka",
     id_past: "telah membuka",
-
+  
     past: {
-      ana: "فتحتُ",
-      nahnu: "فتحنا",
-      anta: "فتحتَ",
-      anti: "فتحتِ",
-      antuma_m: "فتحتما",
-      antuma_f: "فتحتما",
-      antum: "فتحتم",
-      antunna: "فتحتنّ",
-      huwa: "فتحَ",
-      hiya: "فتحتْ",
-      huma_m: "فتحا",
-      huma_f: "فتحتا",
-      hum: "فتحوا",
-      hunna: "فتحنَ"
+      ana: "فَتَحْتُ",
+      nahnu: "فَتَحْنَا",
+      anta: "فَتَحْتَ",
+      anti: "فَتَحْتِ",
+      antuma_m: "فَتَحْتُمَا",
+      antuma_f: "فَتَحْتُمَا",
+      antum: "فَتَحْتُمْ",
+      antunna: "فَتَحْتُنَّ",
+      huwa: "فَتَحَ",
+      hiya: "فَتَحَتْ",
+      huma_m: "فَتَحَا",
+      huma_f: "فَتَحَتَا",
+      hum: "فَتَحُوا",
+      hunna: "فَتَحْنَ"
     },
-
+  
     present: {
-      ana: "أفتح",
-      nahnu: "نفتح",
-      anta: "تفتح",
-      anti: "تفتحين",
-      antuma_m: "تفتحان",
-      antuma_f: "تفتحان",
-      antum: "تفتحون",
-      antunna: "يفتحن",
-      huwa: "يفتح",
-      hiya: "تفتح",
-      huma_m: "يفتحان",
-      huma_f: "تفتحان",
-      hum: "يفتحون",
-      hunna: "يفتحن"
+      ana: "أَفْتَحُ",
+      nahnu: "نَفْتَحُ",
+      anta: "تَفْتَحُ",
+      anti: "تَفْتَحِينَ",
+      antuma_m: "تَفْتَحَانِ",
+      antuma_f: "تَفْتَحَانِ",
+      antum: "تَفْتَحُونَ",
+      antunna: "تَفْتَحْنَ",
+      huwa: "يَفْتَحُ",
+      hiya: "تَفْتَحُ",
+      huma_m: "يَفْتَحَانِ",
+      huma_f: "تَفْتَحَانِ",
+      hum: "يَفْتَحُونَ",
+      hunna: "يَفْتَحْنَ"
     }
   },
 
@@ -197,39 +197,39 @@ const verbs = [
     key: "akala",
     id_present: "makan",
     id_past: "telah makan",
-
+  
     past: {
-      ana: "أكلتُ",
-      nahnu: "أكلنا",
-      anta: "أكلتَ",
-      anti: "أكلتِ",
-      antuma_m: "أكلتما",
-      antuma_f: "أكلتما",
-      antum: "أكلتم",
-      antunna: "أكلتنّ",
-      huwa: "أكلَ",
-      hiya: "أكلتْ",
-      huma_m: "أكلا",
-      huma_f: "أكلتا",
-      hum: "أكلوا",
-      hunna: "أكلنَ"
+      ana: "أَكَلْتُ",
+      nahnu: "أَكَلْنَا",
+      anta: "أَكَلْتَ",
+      anti: "أَكَلْتِ",
+      antuma_m: "أَكَلْتُمَا",
+      antuma_f: "أَكَلْتُمَا",
+      antum: "أَكَلْتُمْ",
+      antunna: "أَكَلْتُنَّ",
+      huwa: "أَكَلَ",
+      hiya: "أَكَلَتْ",
+      huma_m: "أَكَلَا",
+      huma_f: "أَكَلَتَا",
+      hum: "أَكَلُوا",
+      hunna: "أَكَلْنَ"
     },
-
+  
     present: {
-      ana: "آكل",
-      nahnu: "نأكل",
-      anta: "تأكل",
-      anti: "تأكلين",
-      antuma_m: "تأكلان",
-      antuma_f: "تأكلان",
-      antum: "تأكلون",
-      antunna: "يأكلن",
-      huwa: "يأكل",
-      hiya: "تأكل",
-      huma_m: "يأكلان",
-      huma_f: "تأكلان",
-      hum: "يأكلون",
-      hunna: "يأكلن"
+      ana: "آكُلُ",
+      nahnu: "نَأْكُلُ",
+      anta: "تَأْكُلُ",
+      anti: "تَأْكُلِينَ",
+      antuma_m: "تَأْكُلَانِ",
+      antuma_f: "تَأْكُلَانِ",
+      antum: "تَأْكُلُونَ",
+      antunna: "تَأْكُلْنَ",
+      huwa: "يَأْكُلُ",
+      hiya: "تَأْكُلُ",
+      huma_m: "يَأْكُلَانِ",
+      huma_f: "تَأْكُلَانِ",
+      hum: "يَأْكُلُونَ",
+      hunna: "يَأْكُلْنَ"
     }
   },
 
@@ -237,79 +237,79 @@ const verbs = [
     key: "dzahaba",
     id_present: "pergi",
     id_past: "telah pergi",
-
+  
     past: {
-      ana: "ذهبتُ",
-      nahnu: "ذهبنا",
-      anta: "ذهبتَ",
-      anti: "ذهبتِ",
-      antuma_m: "ذهبتما",
-      antuma_f: "ذهبتما",
-      antum: "ذهبتم",
-      antunna: "ذهبتنّ",
-      huwa: "ذهبَ",
-      hiya: "ذهبتْ",
-      huma_m: "ذهبا",
-      huma_f: "ذهبتا",
-      hum: "ذهبوا",
-      hunna: "ذهبنَ"
+      ana: "ذَهَبْتُ",
+      nahnu: "ذَهَبْنَا",
+      anta: "ذَهَبْتَ",
+      anti: "ذَهَبْتِ",
+      antuma_m: "ذَهَبْتُمَا",
+      antuma_f: "ذَهَبْتُمَا",
+      antum: "ذَهَبْتُمْ",
+      antunna: "ذَهَبْتُنَّ",
+      huwa: "ذَهَبَ",
+      hiya: "ذَهَبَتْ",
+      huma_m: "ذَهَبَا",
+      huma_f: "ذَهَبَتَا",
+      hum: "ذَهَبُوا",
+      hunna: "ذَهَبْنَ"
     },
-
+  
     present: {
-      ana: "أذهب",
-      nahnu: "نذهب",
-      anta: "تذهب",
-      anti: "تذهبين",
-      antuma_m: "تذهبان",
-      antuma_f: "تذهبان",
-      antum: "تذهبون",
-      antunna: "يذهبن",
-      huwa: "يذهب",
-      hiya: "تذهب",
-      huma_m: "يذهبان",
-      huma_f: "تذهبان",
-      hum: "يذهبون",
-      hunna: "يذهبن"
+      ana: "أَذْهَبُ",
+      nahnu: "نَذْهَبُ",
+      anta: "تَذْهَبُ",
+      anti: "تَذْهَبِينَ",
+      antuma_m: "تَذْهَبَانِ",
+      antuma_f: "تَذْهَبَانِ",
+      antum: "تَذْهَبُونَ",
+      antunna: "تَذْهَبْنَ",
+      huwa: "يَذْهَبُ",
+      hiya: "تَذْهَبُ",
+      huma_m: "يَذْهَبَانِ",
+      huma_f: "تَذْهَبَانِ",
+      hum: "يَذْهَبُونَ",
+      hunna: "يَذْهَبْنَ"
     }
   },
-
+  
   {
     key: "ghadhiba",
     id_present: "marah",
     id_past: "telah marah",
-
+  
     past: {
-      ana: "غضبتُ",
-      nahnu: "غضبنا",
-      anta: "غضبتَ",
-      anti: "غضبتِ",
-      antuma_m: "غضبتما",
-      antuma_f: "غضبتما",
-      antum: "غضبتم",
-      antunna: "غضبتنّ",
-      huwa: "غضبَ",
-      hiya: "غضبتْ",
-      huma_m: "غضبا",
-      huma_f: "غضبتا",
-      hum: "غضبوا",
-      hunna: "غضبنَ"
+      ana: "غَضِبْتُ",
+      nahnu: "غَضِبْنَا",
+      anta: "غَضِبْتَ",
+      anti: "غَضِبْتِ",
+      antuma_m: "غَضِبْتُمَا",
+      antuma_f: "غَضِبْتُمَا",
+      antum: "غَضِبْتُمْ",
+      antunna: "غَضِبْتُنَّ",
+      huwa: "غَضِبَ",
+      hiya: "غَضِبَتْ",
+      huma_m: "غَضِبَا",
+      huma_f: "غَضِبَتَا",
+      hum: "غَضِبُوا",
+      hunna: "غَضِبْنَ"
     },
-
+  
     present: {
-      ana: "أغضب",
-      nahnu: "نغضب",
-      anta: "تغضب",
-      anti: "تغضبين",
-      antuma_m: "تغضبان",
-      antuma_f: "تغضبان",
-      antum: "تغضبون",
-      antunna: "يغضبن",
-      huwa: "يغضب",
-      hiya: "تغضب",
-      huma_m: "يغضبان",
-      huma_f: "تغضبان",
-      hum: "يغضبون",
-      hunna: "يغضبن"
+      ana: "أَغْضَبُ",
+      nahnu: "نَغْضَبُ",
+      anta: "تَغْضَبُ",
+      anti: "تَغْضَبِينَ",
+      antuma_m: "تَغْضَبَانِ",
+      antuma_f: "تَغْضَبَانِ",
+      antum: "تَغْضَبُونَ",
+      antunna: "تَغْضَبْنَ",
+      huwa: "يَغْضَبُ",
+      hiya: "تَغْضَبُ",
+      huma_m: "يَغْضَبَانِ",
+      huma_f: "تَغْضَبَانِ",
+      hum: "يَغْضَبُونَ",
+      hunna: "يَغْضَبْنَ"
     }
   },
 
@@ -317,156 +317,159 @@ const verbs = [
     key: "shabara",
     id_present: "sabar",
     id_past: "telah sabar",
-
+  
     past: {
-      ana: "صبرتُ",
-      nahnu: "صبرنا",
-      anta: "صبرتَ",
-      anti: "صبرتِ",
-      antuma_m: "صبرتما",
-      antuma_f: "صبرتما",
-      antum: "صبرتم",
-      antunna: "صبرتنّ",
-      huwa: "صبرَ",
-      hiya: "صبرتْ",
-      huma_m: "صبرا",
-      huma_f: "صبرتا",
-      hum: "صبروا",
-      hunna: "صبرنَ"
+      ana: "صَبَرْتُ",
+      nahnu: "صَبَرْنَا",
+      anta: "صَبَرْتَ",
+      anti: "صَبَرْتِ",
+      antuma_m: "صَبَرْتُمَا",
+      antuma_f: "صَبَرْتُمَا",
+      antum: "صَبَرْتُمْ",
+      antunna: "صَبَرْتُنَّ",
+      huwa: "صَبَرَ",
+      hiya: "صَبَرَتْ",
+      huma_m: "صَبَرَا",
+      huma_f: "صَبَرَتَا",
+      hum: "صَبَرُوا",
+      hunna: "صَبَرْنَ"
     },
-
+  
     present: {
-      ana: "أصبر",
-      nahnu: "نصبر",
-      anta: "تصبر",
-      anti: "تصبرين",
-      antuma_m: "تصبران",
-      antuma_f: "تصبران",
-      antum: "تصبرون",
-      antunna: "يصبرن",
-      huwa: "يصبر",
-      hiya: "تصبر",
-      huma_m: "يصبران",
-      huma_f: "تصبران",
-      hum: "يصبرون",
-      hunna: "يصبرن"
+      ana: "أَصْبِرُ",
+      nahnu: "نَصْبِرُ",
+      anta: "تَصْبِرُ",
+      anti: "تَصْبِرِينَ",
+      antuma_m: "تَصْبِرَانِ",
+      antuma_f: "تَصْبِرَانِ",
+      antum: "تَصْبِرُونَ",
+      antunna: "تَصْبِرْنَ",
+      huwa: "يَصْبِرُ",
+      hiya: "تَصْبِرُ",
+      huma_m: "يَصْبِرَانِ",
+      huma_f: "تَصْبِرَانِ",
+      hum: "يَصْبِرُونَ",
+      hunna: "يَصْبِرْنَ"
     }
   },
+
   {
     key: "rafasya",
     id_present: "menendang",
     id_past: "telah menendang",
   
     past: {
-      ana: "رفشتُ",
-      nahnu: "رفشنا",
-      anta: "رفشتَ",
-      anti: "رفشتِ",
-      antuma_m: "رفشتما",
-      antuma_f: "رفشتما",
-      antum: "رفشتم",
-      antunna: "رفشتنّ",
-      huwa: "رفشَ",
-      hiya: "رفشتْ",
-      huma_m: "رفشا",
-      huma_f: "رفشتا",
-      hum: "رفشوا",
-      hunna: "رفشنَ"
+      ana: "رَفَشْتُ",
+      nahnu: "رَفَشْنَا",
+      anta: "رَفَشْتَ",
+      anti: "رَفَشْتِ",
+      antuma_m: "رَفَشْتُمَا",
+      antuma_f: "رَفَشْتُمَا",
+      antum: "رَفَشْتُمْ",
+      antunna: "رَفَشْتُنَّ",
+      huwa: "رَفَشَ",
+      hiya: "رَفَشَتْ",
+      huma_m: "رَفَشَا",
+      huma_f: "رَفَشَتَا",
+      hum: "رَفَشُوا",
+      hunna: "رَفَشْنَ"
     },
   
     present: {
-      ana: "أرفش",
-      nahnu: "نرفش",
-      anta: "ترفش",
-      anti: "ترفشين",
-      antuma_m: "ترفشان",
-      antuma_f: "ترفشان",
-      antum: "ترفشون",
-      antunna: "يرفشن",
-      huwa: "يرفش",
-      hiya: "ترفش",
-      huma_m: "يرفشان",
-      huma_f: "ترفشان",
-      hum: "يرفشون",
-      hunna: "يرفشن"
+      ana: "أَرْفِشُ",
+      nahnu: "نَرْفِشُ",
+      anta: "تَرْفِشُ",
+      anti: "تَرْفِشِينَ",
+      antuma_m: "تَرْفِشَانِ",
+      antuma_f: "تَرْفِشَانِ",
+      antum: "تَرْفِشُونَ",
+      antunna: "تَرْفِشْنَ",
+      huwa: "يَرْفِشُ",
+      hiya: "تَرْفِشُ",
+      huma_m: "يَرْفِشَانِ",
+      huma_f: "تَرْفِشَانِ",
+      hum: "يَرْفِشُونَ",
+      hunna: "يَرْفِشْنَ"
     }
   },
+  
   {
     key: "masaka",
     id_present: "memegang",
     id_past: "telah memegang",
   
     past: {
-      ana: "مسكتُ",
-      nahnu: "مسكنا",
-      anta: "مسكتَ",
-      anti: "مسكتِ",
-      antuma_m: "مسكتما",
-      antuma_f: "مسكتما",
-      antum: "مسكتم",
-      antunna: "مسكتنّ",
-      huwa: "مسكَ",
-      hiya: "مسكتْ",
-      huma_m: "مسكا",
-      huma_f: "مسكتا",
-      hum: "مسكوا",
-      hunna: "مسكنَ"
+      ana: "مَسَكْتُ",
+      nahnu: "مَسَكْنَا",
+      anta: "مَسَكْتَ",
+      anti: "مَسَكْتِ",
+      antuma_m: "مَسَكْتُمَا",
+      antuma_f: "مَسَكْتُمَا",
+      antum: "مَسَكْتُمْ",
+      antunna: "مَسَكْتُنَّ",
+      huwa: "مَسَكَ",
+      hiya: "مَسَكَتْ",
+      huma_m: "مَسَكَا",
+      huma_f: "مَسَكَتَا",
+      hum: "مَسَكُوا",
+      hunna: "مَسَكْنَ"
     },
   
     present: {
-      ana: "أمسك",
-      nahnu: "نمسك",
-      anta: "تمسك",
-      anti: "تمسكين",
-      antuma_m: "تمسكان",
-      antuma_f: "تمسكان",
-      antum: "تمسكون",
-      antunna: "تمسكن",
-      huwa: "يمسك",
-      hiya: "تمسك",
-      huma_m: "يمسكان",
-      huma_f: "تمسكان",
-      hum: "يمسكون",
-      hunna: "يمسكن"
+      ana: "أَمْسِكُ",
+      nahnu: "نُمْسِكُ",
+      anta: "تُمْسِكُ",
+      anti: "تُمْسِكِينَ",
+      antuma_m: "تُمْسِكَانِ",
+      antuma_f: "تُمْسِكَانِ",
+      antum: "تُمْسِكُونَ",
+      antunna: "تُمْسِكْنَ",
+      huwa: "يُمْسِكُ",
+      hiya: "تُمْسِكُ",
+      huma_m: "يُمْسِكَانِ",
+      huma_f: "تُمْسِكَانِ",
+      hum: "يُمْسِكُونَ",
+      hunna: "يُمْسِكْنَ"
     }
   },
+
   {
     key: "sakana",
     id_present: "diam",
     id_past: "telah diam",
   
     past: {
-      ana: "سكنتُ",
-      nahnu: "سكنّا",
-      anta: "سكنتَ",
-      anti: "سكنتِ",
-      antuma_m: "سكنتما",
-      antuma_f: "سكنتما",
-      antum: "سكنتم",
-      antunna: "سكنتنّ",
-      huwa: "سكنَ",
-      hiya: "سكنتْ",
-      huma_m: "سكنا",
-      huma_f: "سكنتا",
-      hum: "سكنوا",
-      hunna: "سكنَّ"
+      ana: "سَكَنْتُ",
+      nahnu: "سَكَنْنَا",
+      anta: "سَكَنْتَ",
+      anti: "سَكَنْتِ",
+      antuma_m: "سَكَنْتُمَا",
+      antuma_f: "سَكَنْتُمَا",
+      antum: "سَكَنْتُمْ",
+      antunna: "سَكَنْتُنَّ",
+      huwa: "سَكَنَ",
+      hiya: "سَكَنَتْ",
+      huma_m: "سَكَنَا",
+      huma_f: "سَكَنَتَا",
+      hum: "سَكَنُوا",
+      hunna: "سَكَنْنَ"
     },
   
     present: {
-      ana: "أسكن",
-      nahnu: "نسكن",
-      anta: "تسكن",
-      anti: "تسكنين",
-      antuma_m: "تسكنان",
-      antuma_f: "تسكنان",
-      antum: "تسكنون",
-      antunna: "تسكنّ",
-      huwa: "يسكن",
-      hiya: "تسكن",
-      huma_m: "يسكنان",
-      huma_f: "تسكنان",
-      hum: "يسكنون",
-      hunna: "يسكنّ"
+      ana: "أَسْكُنُ",
+      nahnu: "نَسْكُنُ",
+      anta: "تَسْكُنُ",
+      anti: "تَسْكُنِينَ",
+      antuma_m: "تَسْكُنَانِ",
+      antuma_f: "تَسْكُنَانِ",
+      antum: "تَسْكُنُونَ",
+      antunna: "تَسْكُنْنَ",
+      huwa: "يَسْكُنُ",
+      hiya: "تَسْكُنُ",
+      huma_m: "يَسْكُنَانِ",
+      huma_f: "تَسْكُنَانِ",
+      hum: "يَسْكُنُونَ",
+      hunna: "يَسْكُنْنَ"
     }
   },
 ];
@@ -474,21 +477,19 @@ const verbs = [
 // ======================
 // KATA BENDA
 // ======================
-
 const nouns = [
-  { id: "buku", ar: "كتاب", gender: "m", type: "object" },
-  { id: "mobil", ar: "سيارة", gender: "f", type: "object" },
-  { id: "papan tulis", ar: "سبورة", gender: "f", type: "object" },
-  { id: "karpet", ar: "بساط", gender: "m", type: "object" },
-  { id: "guru", ar: "مدرس", gender: "m", type: "profession" },
-  { id: "dokter", ar: "طبيب", gender: "m", type: "profession" },
-  { id: "insinyur", ar: "مهندس", gender: "m", type: "profession" },
-  { id: "murid", ar: "طالب", gender: "m", type: "profession" },
-  { id: "ustadz", ar: "أستاذ", gender: "m", type: "profession" },
-  { id: "matahari", ar: "شمس", gender: "f", type: "object" },
-  { id: "masjid", ar: "مسجد", gender: "m", type: "object" }
+  { id: "buku", ar: "كِتَابٌ", gender: "m", type: "object" },
+  { id: "mobil", ar: "سَيَّارَةٌ", gender: "f", type: "object" },
+  { id: "papan tulis", ar: "سَبُّورَةٌ", gender: "f", type: "object" },
+  { id: "karpet", ar: "بِسَاطٌ", gender: "m", type: "object" },
+  { id: "guru", ar: "مُدَرِّسٌ", gender: "m", type: "profession" },
+  { id: "dokter", ar: "طَبِيبٌ", gender: "m", type: "profession" },
+  { id: "insinyur", ar: "مُهَنْدِسٌ", gender: "m", type: "profession" },
+  { id: "murid", ar: "طَالِبٌ", gender: "m", type: "profession" },
+  { id: "ustadz", ar: "أُسْتَاذٌ", gender: "m", type: "profession" },
+  { id: "matahari", ar: "شَمْسٌ", gender: "f", type: "object" },
+  { id: "masjid", ar: "مَسْجِدٌ", gender: "m", type: "object" }
 ];
-
 // ======================
 // RANDOM
 // ======================
@@ -721,12 +722,12 @@ function playAnswer() {
 function getIsimIsyarahFixed(gender, distance) {
   if (gender === "m") {
     return distance === "near"
-      ? { id: "Ini", ar: "هذا" }
-      : { id: "Itu", ar: "ذلك" };
+      ? { id: "Ini", ar: "هَذَا" }
+      : { id: "Itu", ar: "ذَٰلِكَ" };
   } else {
     return distance === "near"
-      ? { id: "Ini", ar: "هذه" }
-      : { id: "Itu", ar: "تلك" };
+      ? { id: "Ini", ar: "هَذِهِ" }
+      : { id: "Itu", ar: "تِلْكَ" };
   }
 }
 

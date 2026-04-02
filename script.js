@@ -519,17 +519,17 @@ function generateSentence() {
     const sentenceAr = isyarah.ar + " " + noun.ar;
   
     current = sentenceAr;
-    
-    currentQuestion = sentenceId;
-    currentLabel = labelText;
   
     document.getElementById("question").innerText = sentenceId;
   
     const labelText = noun.gender === "m" ? "mudzakkar" : "muannats";
+
+    currentQuestion = sentenceId;
+    currentLabel = labelText;
     document.getElementById("label").innerText = labelText;
   
     document.getElementById("answer").innerText = "";
-    document.getElementById("answer").style.display = "none";
+    document.getElementById("answerWrap").style.display = "none";
   
     return;
   }
@@ -568,7 +568,7 @@ function generateSentence() {
   document.getElementById("label").innerText = subject.label;
 
   document.getElementById("answer").innerText = "";
-  document.getElementById("answer").style.display = "none";
+  document.getElementById("answerWrap").style.display = "none";
 }
 
 function shuffle(array) {
@@ -641,7 +641,6 @@ function buildNounPool() {
 // ======================
 function showAnswer() {
   document.getElementById("answer").innerText = current;
-  document.getElementById("answerWrap").style.display = "none";
   document.getElementById("answerWrap").style.display = "block";
 }
 
@@ -667,29 +666,26 @@ function toggleMode() {
   } else {
     buildPool();
   }
-
-  index = 0;
-  shuffle(pool);
-
-  nounIndex = 0;
-  shuffle(nounPool);
 }
 
 // ======================
 // AUDIO
 // ======================
-
 function speakQuestion(text, label) {
   const utter = new SpeechSynthesisUtterance(
     text + ". " + label
   );
   utter.lang = "id-ID";
+
+  speechSynthesis.cancel();
   speechSynthesis.speak(utter);
 }
 
 function speakArabic(text) {
   const utter = new SpeechSynthesisUtterance(text);
   utter.lang = "ar-SA";
+
+  speechSynthesis.cancel();
   speechSynthesis.speak(utter);
 }
 
@@ -707,13 +703,13 @@ function playAnswer() {
 // FUNGSI LAIN
 // ======================
 
-function getIsimIsyarahFixed(gender, type) {
+function getIsimIsyarahFixed(gender, distance) {
   if (gender === "m") {
-    return type === "near"
+    return distance === "near"
       ? { id: "Ini", ar: "هذا" }
       : { id: "Itu", ar: "ذلك" };
   } else {
-    return type === "near"
+    return distance === "near"
       ? { id: "Ini", ar: "هذه" }
       : { id: "Itu", ar: "تلك" };
   }

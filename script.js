@@ -593,13 +593,18 @@ function buildNounPool() {
 
   nouns.forEach(noun => {
     ["near", "far"].forEach(type => {
+
       if (noun.type === "profession") {
-          // split pria & wanita
-        } else {
-          // object biasa
-        }
+        // pria
+        nounPool.push({
+          noun: {
+            id: noun.id,
+            ar: noun.ar,
+            gender: "m"
+          },
           type
         });
+
         // wanita
         nounPool.push({
           noun: {
@@ -609,7 +614,15 @@ function buildNounPool() {
           },
           type
         });
+
+      } else {
+        // benda biasa
+        nounPool.push({
+          noun,
+          type
+        });
       }
+
     });
   });
 

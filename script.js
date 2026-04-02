@@ -519,6 +519,9 @@ function generateSentence() {
     const sentenceAr = isyarah.ar + " " + noun.ar;
   
     current = sentenceAr;
+    
+    currentQuestion = sentenceId;
+    currentLabel = labelText;
   
     document.getElementById("question").innerText = sentenceId;
   
@@ -557,6 +560,9 @@ function generateSentence() {
   const sentenceAr = subject.ar + " " + verbAr;
 
   current = sentenceAr;
+
+  currentQuestion = sentenceId;
+  currentLabel = subject.label;
 
   document.getElementById("question").innerText = sentenceId;
   document.getElementById("label").innerText = subject.label;
@@ -635,9 +641,8 @@ function buildNounPool() {
 // ======================
 function showAnswer() {
   document.getElementById("answer").innerText = current;
-  document.getElementById("answer").style.display = "block";
-
-  document.getElementById("audioAnswer").style.display = "block";
+  document.getElementById("answerWrap").style.display = "none";
+  document.getElementById("answerWrap").style.display = "block";
 }
 
 // ======================
@@ -657,8 +662,17 @@ function toggleMode() {
     btn.innerText = "Kata Benda";
   }
 
+  if (mode === "noun") {
+    buildNounPool();
+  } else {
+    buildPool();
+  }
+
   index = 0;
   shuffle(pool);
+
+  nounIndex = 0;
+  shuffle(nounPool);
 }
 
 // ======================

@@ -531,6 +531,8 @@ function generateSentence() {
   
     document.getElementById("answer").innerText = "";
     document.getElementById("answerWrap").style.display = "none";
+
+    setTimeout(() => playQuestion(), 100);
   
     return;
   }
@@ -570,6 +572,8 @@ function generateSentence() {
 
   document.getElementById("answer").innerText = "";
   document.getElementById("answerWrap").style.display = "none";
+
+  setTimeout(() => playQuestion(), 100);
 }
 
 function shuffle(array) {
@@ -643,6 +647,8 @@ function buildNounPool() {
 function showAnswer() {
   document.getElementById("answer").innerText = current;
   document.getElementById("answerWrap").style.display = "block";
+
+  setTimeout(() => playAnswer(), 100);
 }
 
 // ======================

@@ -121,19 +121,16 @@
     .generate:active {
       box-shadow: 0 1px 0 #d4a91f;
     }
-  
-    .answer-btn {
-      background: #4B2E4C;
-      color: #F8F9FA;
-      border: 1px solid #F6C32E;
-      box-shadow: 0 1px 0 #2E1B2F;
-    }
     
     .answer-btn {
       background: #4B2E4C;
       color: #F8F9FA;
       border: none;
       box-shadow: 0 4px 0 #2E1B2F; /* 🔥 tambahin ini */
+    }
+
+    .answer-btn:active {
+      box-shadow: 0 1px 0 #2E1B2F;
     }
   
     .footer {
@@ -165,6 +162,11 @@
     }
   
     button:hover {
+      transform: translateY(-1px);
+    }
+    
+    .generate:hover,
+    .answer-btn:hover {
       transform: translateY(-1px);
     }
   

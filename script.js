@@ -620,7 +620,7 @@ function buildNounPool() {
         nounPool.push({
           noun: {
             id: noun.id + " wanita",
-            ar: noun.ar + "ة",
+            ar: toFeminine(noun.ar),
             gender: "f"
           },
           type
@@ -738,7 +738,8 @@ function getIsimIsyarahFixed(gender, distance) {
 }
 
 function toFeminine(ar) {
-  return ar + "ةٌ";
+  const base = ar.replace("ٌ", "");
+  return base + "ةٌ";
 }
 
 buildPool();

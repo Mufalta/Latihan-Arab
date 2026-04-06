@@ -726,9 +726,12 @@ function playClickSound() {
 
   if (!sound) return;
 
-  const clone = sound.cloneNode(true);
-  clone.volume = 0.6; // 🔥 biar ga terlalu keras
-  clone.play().catch(() => {});
+  sound.currentTime = 0; // reset ke awal
+  sound.volume = 0.6;
+
+  sound.play().catch(err => {
+    console.log("Audio gagal:", err);
+  });
 }
 
 // ======================
@@ -761,6 +764,16 @@ function handleClick(el) {
     el.classList.remove("clicked");
   }, 200);
 }
+
+document.body.addEventListener("click", () => {
+  const sound = document.getElementById("clickSound");
+  if (sound) {
+    sound.play().then(() => {
+      sound.pause();
+      sound.currentTime = 0;
+    }).catch(() => {});
+  }
+}, { once: true });
 
 buildPool();
 buildNounPool();

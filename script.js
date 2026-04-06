@@ -487,7 +487,7 @@ const nouns = [
   { id: "insinyur", ar: "مُهَنْدِسٌ", gender: "m", type: "profession" },
   { id: "murid", ar: "طَالِبٌ", gender: "m", type: "profession" },
   { id: "ustadz", ar: "أُسْتَاذٌ", gender: "m", type: "profession" },
-  { id: "matahari", ar: "شَمْسٌ", gender: "f", type: "object" },
+  { id: "matahari", ar: "شَمْسٌ", gender: "m", type: "object" },
   { id: "masjid", ar: "مَسْجِدٌ", gender: "m", type: "object" }
 ];
 // ======================

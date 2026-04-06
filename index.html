@@ -162,6 +162,16 @@
     button:hover {
       transform: translateY(-1px);
     }
+
+    button.clicked {
+      animation: clickBounce 0.2s ease;
+    }
+    
+    @keyframes clickBounce {
+      0% { transform: scale(1); }
+      50% { transform: scale(0.94); }
+      100% { transform: scale(1); }
+    }
     
     .generate:hover,
     .answer-btn:hover {
@@ -191,7 +201,6 @@
 
 <body>
 <audio id="clickSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_3b6b2c9f9f.mp3?filename=click-124467.mp3"></audio>
-<audio id="clickSoft" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_efbfc3e9d9.mp3?filename=click-soft-124467.mp3"></audio>
 
   <div class="app">
     <h1>Latihan Bahasa Arab</h1>
@@ -215,15 +224,15 @@
 
       <!-- Tombol -->
       <div class="buttons">
-        <button class="generate" onclick="handleClick(this, 'main'); generateSentence()">
+        <button class="generate" onclick="handleClick(this); generateSentence()">
           Buat Kalimat
         </button>
         
-        <button class="answer-btn" onclick="handleClick(this, 'soft'); showAnswer()">
+        <button class="answer-btn" onclick="handleClick(this); showAnswer()">
           Lihat Jawaban
         </button>
         
-        <button class="answer-btn" onclick="handleClick(this, 'soft'); toggleMode()" id="modeBtn">
+        <button class="answer-btn" onclick="handleClick(this); toggleMode()" id="modeBtn">
           Fi'il Madhi
         </button>
       </div>

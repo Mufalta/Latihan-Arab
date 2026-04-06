@@ -721,10 +721,17 @@ function playAnswer() {
   speakArabic(current);
 }
 
-function playClickSound() {
-  const sound = document.getElementById("clickSound");
-  sound.currentTime = 0;
-  sound.play();
+function playClickSound(type = "main") {
+  let sound;
+
+  if (type === "main") {
+    sound = document.getElementById("clickSound");
+  } else {
+    sound = document.getElementById("clickSoft");
+  }
+
+  const clone = sound.cloneNode();
+  clone.play();
 }
 
 // ======================
@@ -748,8 +755,8 @@ function toFeminine(ar) {
   return base + "ةٌ";
 }
 
-function handleClick(el) {
-  playClickSound();
+function handleClick(el, type) {
+  playClickSound(type);
 
   el.classList.add("clicked");
 

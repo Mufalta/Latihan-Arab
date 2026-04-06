@@ -156,13 +156,23 @@
     }
     
     button:active::after {
-      transform: scale(2px);
+      transform: translateY(2px) scale(0.98);
       opacity: 1;
       transition: transform 0.4s, opacity 0.6s;
+    }
+
+    button.clicked {
+      animation: clickBounce 0.2s ease;
     }
   
     button:hover {
       transform: translateY(-1px);
+    }
+
+    @keyframes clickBounce {
+      0% { transform: scale(1); }
+      50% { transform: scale(0.96); }
+      100% { transform: scale(1); }
     }
     
     .generate:hover,
@@ -192,6 +202,7 @@
 </head>
 
 <body>
+<audio id="clickSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_3b6b2c9f9f.mp3?filename=click-124467.mp3"></audio>
 
   <div class="app">
     <h1>Latihan Bahasa Arab</h1>
@@ -215,9 +226,15 @@
 
       <!-- Tombol -->
       <div class="buttons">
-        <button class="generate" onclick="generateSentence()">Buat Kalimat</button>
-        <button class="answer-btn" onclick="showAnswer()">Lihat Jawaban</button>
-        <button class="answer-btn" onclick="toggleMode()" id="modeBtn">
+        <button class="generate" onclick="handleClick(this); generateSentence()">
+          Buat Kalimat
+        </button>
+        
+        <button class="answer-btn" onclick="handleClick(this); showAnswer()">
+          Lihat Jawaban
+        </button>
+        
+        <button class="answer-btn" onclick="handleClick(this); toggleMode()" id="modeBtn">
           Fi'il Madhi
         </button>
       </div>

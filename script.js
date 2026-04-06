@@ -721,17 +721,14 @@ function playAnswer() {
   speakArabic(current);
 }
 
-function playClickSound(type = "main") {
-  let sound;
+function playClickSound() {
+  const sound = document.getElementById("clickSound");
 
-  if (type === "main") {
-    sound = document.getElementById("clickSound");
-  } else {
-    sound = document.getElementById("clickSoft");
-  }
+  if (!sound) return;
 
-  const clone = sound.cloneNode();
-  clone.play();
+  const clone = sound.cloneNode(true);
+  clone.volume = 0.6; // 🔥 biar ga terlalu keras
+  clone.play().catch(() => {});
 }
 
 // ======================
@@ -755,8 +752,8 @@ function toFeminine(ar) {
   return base + "ةٌ";
 }
 
-function handleClick(el, type) {
-  playClickSound(type);
+function handleClick(el) {
+  playClickSound();
 
   el.classList.add("clicked");
 

@@ -721,6 +721,12 @@ function playAnswer() {
   speakArabic(current);
 }
 
+function playClickSound() {
+  const sound = document.getElementById("clickSound");
+  sound.currentTime = 0;
+  sound.play();
+}
+
 // ======================
 // FUNGSI LAIN
 // ======================
@@ -740,6 +746,16 @@ function getIsimIsyarahFixed(gender, distance) {
 function toFeminine(ar) {
   const base = ar.replace("ٌ", "");
   return base + "ةٌ";
+}
+
+function handleClick(el) {
+  playClickSound();
+
+  el.classList.add("clicked");
+
+  setTimeout(() => {
+    el.classList.remove("clicked");
+  }, 200);
 }
 
 buildPool();

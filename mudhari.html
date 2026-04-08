@@ -29,6 +29,17 @@
       align-items: center;
     
       height: 100dvh;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      will-change: opacity;
+    }
+
+    body.loaded {
+      opacity: 1;
+    }
+    
+    body.fade-out {
+      opacity: 0;
     }
     
     .app {
@@ -300,7 +311,7 @@
       </div>
 
     </div>
-    <button class="btn-back" onclick="goMenu()">
+    <button class="btn-back" onclick="go('menu.html')">
       ⬅️
     </button>
     
@@ -317,8 +328,14 @@
   </script>
 
   <script>
-    function goMenu() {
-      window.location.href = "menu.html";
+    function go(url) {
+      document.body.classList.add("fade-out");
+    
+      document.body.style.pointerEvents = "none"; // 🔥 anti spam klik
+    
+      setTimeout(() => {
+        window.location.href = url;
+      }, 300);
     }
   </script>
   

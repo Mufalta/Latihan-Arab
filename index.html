@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Arabica</title>
 
-  <!-- FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
   <style>
@@ -22,18 +21,19 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+
+      min-height: 100vh;
+      padding: 20px;
     }
 
     .container {
       text-align: center;
+      width: 100%;
+      max-width: 500px;
     }
 
-    /* =========================
-       TITLE
-    ========================= */
     h1 {
-      font-size: 42px;
+      font-size: clamp(26px, 5vw, 42px);
       font-weight: 800;
       color: #F6C32E;
       margin-bottom: 10px;
@@ -41,29 +41,29 @@
 
     .subtitle {
       opacity: 0.8;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
+      font-size: 14px;
     }
 
-    /* =========================
-       CARD (BIAR KAYAK MODE)
-    ========================= */
+    /* CARD */
     .card {
       background: #2E1B2F;
-      padding: 40px;
+      padding: 25px;
       border-radius: 20px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 
       display: flex;
-      gap: 20px;
+      gap: 15px;
       justify-content: center;
+      flex-wrap: wrap; /* 🔥 penting buat mobile */
     }
 
-    /* =========================
-       BUTTON
-    ========================= */
+    /* BUTTON */
     .btn {
-      width: 180px;
-      height: 140px;
+      flex: 1;
+      min-width: 140px;
+      max-width: 200px;
+      height: 120px;
 
       border-radius: 16px;
       border: none;
@@ -82,7 +82,6 @@
       box-shadow: 0 6px 0 #d4a91f;
 
       transition: all 0.15s ease;
-      position: relative;
     }
 
     .btn:hover {
@@ -95,19 +94,28 @@
     }
 
     .icon {
-      font-size: 28px;
-      margin-bottom: 10px;
+      font-size: 24px;
+      margin-bottom: 8px;
     }
 
-    /* efek klik halus */
-    .btn.clicked {
-      animation: clickBounce 0.2s ease;
-    }
+    /* MOBILE FIX */
+    @media (max-width: 480px) {
+      .card {
+        flex-direction: column; /* 🔥 jadi ke bawah */
+      }
 
-    @keyframes clickBounce {
-      0% { transform: scale(1); }
-      50% { transform: scale(0.94); }
-      100% { transform: scale(1); }
+      .btn {
+        width: 100%;
+        max-width: none;
+        height: 90px;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .icon {
+        margin-bottom: 0;
+      }
     }
 
   </style>
@@ -121,14 +129,12 @@
 
     <div class="card">
 
-      <!-- MULAI -->
-      <button class="btn" onclick="go('menu.html', this)">
+      <button class="btn" onclick="go('menu.html')">
         <div class="icon">📘</div>
         Mulai Latihan
       </button>
 
-      <!-- PROFIL -->
-      <button class="btn" onclick="go('profil.html', this)">
+      <button class="btn" onclick="go('profil.html')">
         <div class="icon">👨‍💻</div>
         Profil
       </button>
@@ -137,12 +143,8 @@
   </div>
 
   <script>
-    function go(url, el) {
-      el.classList.add("clicked");
-
-      setTimeout(() => {
-        window.location.href = url;
-      }, 150);
+    function go(url) {
+      window.location.href = url;
     }
   </script>
 

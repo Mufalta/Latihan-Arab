@@ -8,30 +8,52 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
   <style>
-    body {
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
       margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden; /* 🔥 no scroll */
+    }
+
+    body {
       font-family: 'Inter', sans-serif;
       background: #4B2E4C;
       color: #F8F9FA;
 
       display: flex;
       justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
+      align-items: flex-start;
+      padding-top: 180px;
     }
 
+    /* CONTAINER */
     .container {
-      width: 100%;
-      max-width: 500px;
       text-align: center;
+      width: 100%;
+      max-width: 700px;
+      padding: 0 20px;
     }
 
+    /* TITLE */
     h1 {
+      font-size: 42px;
+      font-weight: 800;
       color: #F6C32E;
-      margin-bottom: 25px;
+      margin-bottom: 35px;
+      line-height: 1.2;
     }
 
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 32px;
+      }
+    }
+
+    /* CARD */
     .card {
       background: #2E1B2F;
       padding: 25px;
@@ -40,21 +62,37 @@
 
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      align-items: center;
+      gap: 18px;
+
+      width: 65%;
+      max-width: 280px;
+      margin: 0 auto;
     }
 
+    /* BUTTON UTAMA */
     .btn {
-      padding: 14px;
-      border-radius: 14px;
+      width: 65%;
+      height: 60px;
+
+      border-radius: 16px;
       border: none;
       cursor: pointer;
-      font-weight: 600;
 
       background: #F6C32E;
       color: #2E1B2F;
 
-      box-shadow: 0 4px 0 #d4a91f;
-      transition: 0.15s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-weight: 600;
+      font-size: 14px;
+
+      box-shadow: 0 6px 0 #d4a91f;
+      transition: all 0.15s ease;
+
+      white-space: nowrap;
     }
 
     .btn:hover {
@@ -63,14 +101,35 @@
 
     .btn:active {
       transform: translateY(2px);
-      box-shadow: 0 1px 0 #d4a91f;
+      box-shadow: 0 2px 0 #d4a91f;
     }
 
-    .back {
-      margin-top: 15px;
-      font-size: 13px;
-      opacity: 0.7;
+    /* BUTTON KEMBALI */
+    .btn-back {
+      width: 65%;
+      height: 55px;
+
+      border-radius: 16px;
+      border: none;
       cursor: pointer;
+
+      background: #5A3A5C; /* 🔥 sama kayak "lihat jawaban" */
+      color: #F8F9FA;
+
+      font-weight: 600;
+      font-size: 14px;
+
+      margin: 25px auto 0 auto;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      transition: 0.15s;
+    }
+
+    .btn-back:hover {
+      opacity: 0.9;
     }
 
   </style>
@@ -97,9 +156,11 @@
 
     </div>
 
-    <div class="back" onclick="history.back()">
+    <!-- 🔥 tombol kembali pindah ke bawah -->
+    <button class="btn-back" onclick="history.back()">
       ← Kembali
-    </div>
+    </button>
+
   </div>
 
   <script>

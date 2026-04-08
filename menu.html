@@ -33,11 +33,6 @@
       will-change: opacity;
     }
 
-    /* saat halaman siap */
-    body.loaded {
-      opacity: 1;
-    }
-    
     /* saat keluar halaman */
     body.fade-out {
       opacity: 0;
@@ -51,6 +46,10 @@
       padding: 0 20px;
       opacity: 1;
       transition: opacity 0.3s ease;
+    }
+
+    .container.loaded .title::after {
+      transform: scaleX(1);
     }
     
     .container.fade-out {
@@ -249,6 +248,7 @@
       if (!el) return;
   
       el.classList.remove("fade-out");
+      el.classList.add("loaded"); // 🔥 WAJIB untuk animasi garis
     }
   
     window.addEventListener("load", showPage);

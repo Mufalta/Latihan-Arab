@@ -82,8 +82,8 @@
       align-items: center;
       gap: 18px;
     
-      width: 80%;          /* 🔥 dari 65% → lebih lega */
-      max-width: 340px;    /* 🔥 dari 280px → ini kunci utama */
+      width: 85%;          /* 🔥 dari 65% → lebih lega */
+      max-width: 360px;    /* 🔥 dari 280px → ini kunci utama */
       margin: 0 auto;
     }
 
@@ -114,34 +114,15 @@
       color: rgba(255,255,255,0.85);
       line-height: 1.7;
     
-      max-width: 280px;   /* 🔥 lebih lebar */
+      max-width: 260px;
       margin: 0 auto;
     
+      text-align: left; /* 🔥 KUNCI UTAMA */
+      
+      padding-left: 14px;
+      border-left: 3px solid #F6C32E; /* 🔥 garis elegan */
+    
       position: relative;
-      text-align: center;
-    
-      padding: 14px 22px 18px 22px;
-    }
-    
-    /* KUTIP KIRI */
-    .quote::before {
-      content: "“";
-      font-size: 28px;
-      color: #F6C32E;
-    
-      position: absolute;
-      left: 4px;
-      top: -6px;
-    }
-    
-    .quote::after {
-      content: "”";
-      font-size: 26px;
-      color: #F6C32E;
-    
-      position: absolute;
-      right: 6px;
-      bottom: 4px;
     }
     
     /* BUTTON HOME (SAMA KAYAK MENU) */

@@ -49,6 +49,12 @@
       width: 100%;
       max-width: 700px;
       padding: 0 20px;
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+    
+    .container.fade-out {
+      opacity: 0;
     }
 
     /* TITLE */
@@ -227,28 +233,26 @@
 
   <script>
     function go(url) {
-      document.body.classList.add("fade-out");
-    
-      document.body.style.pointerEvents = "none"; // 🔥 penting
-    
+      const el = document.querySelector(".container");
+  
+      if (el) el.classList.add("fade-out");
+  
       setTimeout(() => {
         window.location.href = url;
-      }, 300);
+      }, 250);
     }
   </script>
-
+  
   <script>
     function showPage() {
-      document.body.classList.add("loaded");
-      document.body.classList.remove("fade-out");
-      document.body.style.pointerEvents = "auto";
+      const el = document.querySelector(".container");
+      if (!el) return;
+  
+      el.classList.remove("fade-out");
     }
-    
-    // load normal
+  
     window.addEventListener("load", showPage);
-    
-    // 🔥 ini kunci utama (fix blank + back)
-    window.addEventListener("pageshow", showPage);  
+    window.addEventListener("pageshow", showPage);
   </script>
 
 </body>

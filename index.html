@@ -221,9 +221,12 @@
     function go(url) {
       document.body.classList.add("fade-out");
     
+      // 🔥 cegah klik spam
+      document.body.style.pointerEvents = "none";
+    
       setTimeout(() => {
         window.location.href = url;
-      }, 300); // harus sama dengan CSS transition
+      }, 300);
     }
   </script>
 
@@ -232,8 +235,6 @@
       document.body.classList.add("loaded");
     }
   </script>
-    
-</script>
 
 </body>
 </html>

@@ -337,21 +337,15 @@
 
   <script>
     function showPage() {
+      document.body.classList.add("loaded");
+      document.body.classList.remove("fade-out");
       document.body.style.pointerEvents = "auto";
-    
-      // reset state
-      document.body.classList.remove("loaded");
-    
-      // paksa browser sadar ada perubahan
-      requestAnimationFrame(() => {
-        document.body.classList.add("loaded");
-      });
     }
     
-    // saat pertama load
+    // load normal
     window.addEventListener("load", showPage);
     
-    // saat back / swipe / cache
+    // 🔥 ini kunci utama (fix blank + back)
     window.addEventListener("pageshow", showPage);
   </script>
 

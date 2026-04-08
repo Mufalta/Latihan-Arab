@@ -81,11 +81,16 @@
     }
 
     .subtitle-bottom {
-      margin-bottom: 25px; /* 🔥 jarak ke card */
-      font-size: 13px;
-      opacity: 0.7;
+      font-size: 15px;        /* 🔥 lebih besar */
+      font-weight: 500;       /* 🔥 lebih tegas */
+      letter-spacing: 0.4px;  /* 🔥 biar clean */
+    
+      color: rgba(255,255,255,0.75); /* putih soft */
+    
+      margin: 10px auto 30px auto;
     
       text-align: center;
+      max-width: 500px;
     
       opacity: 0;
       transform: translateY(10px);
@@ -93,7 +98,7 @@
     }
     
     body.loaded .subtitle-bottom {
-      opacity: 0.7;
+      opacity: 1;
       transform: translateY(0);
     }
     
@@ -193,6 +198,10 @@
       </button>
 
     </div>
+  </div>
+
+  <div class="footer">
+    Dibuat oleh Mahadhitia
   </div>
 
   <script>

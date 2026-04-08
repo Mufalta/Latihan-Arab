@@ -29,6 +29,19 @@
       align-items: center;
     
       height: 100dvh;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      will-change: opacity;
+    }
+
+    /* saat halaman siap */
+    body.loaded {
+      opacity: 1;
+    }
+    
+    /* saat keluar halaman */
+    body.fade-out {
+      opacity: 0;
     }
     
     .app {
@@ -320,7 +333,11 @@
 
   <script>
     function goMenu() {
-      window.location.href = "menu.html";
+      document.body.classList.add("fade-out");
+    
+      setTimeout(() => {
+        window.location.href = "menu.html";
+      }, 300);
     }
   </script>
 

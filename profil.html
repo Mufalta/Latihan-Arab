@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profil</title>
 
-  <!-- FONT (BIAR SAMA DENGAN INDEX) -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
   <style>
@@ -13,63 +12,85 @@
       box-sizing: border-box;
     }
 
-    body {
+    html, body {
       margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden; /* 🔥 sama kayak menu */
+    }
+
+    body {
       font-family: 'Inter', sans-serif;
       background: #4B2E4C;
       color: #F8F9FA;
 
       display: flex;
       justify-content: center;
-      align-items: center;
-      height: 100vh;
+      align-items: flex-start;
+      padding-top: 140px; /* 🔥 SAMA PERSIS MENU */
     }
 
+    /* CONTAINER */
     .container {
       text-align: center;
       width: 100%;
-      max-width: 400px;
-      padding: 20px;
+      max-width: 700px;
+      padding: 0 20px;
     }
 
     /* TITLE */
     .title {
-      font-size: 32px;
+      font-size: 34px;
       font-weight: 800;
       color: #F6C32E;
+
       margin-bottom: 30px;
       position: relative;
       display: inline-block;
-      padding-bottom: 10px;
     }
 
+    /* 🔥 GARIS ANIMASI (FIX) */
     .title::after {
       content: "";
       display: block;
-      width: 70%;
+
+      width: 75%;
       height: 4px;
       background: #F6C32E;
+
       margin: 10px auto 0;
       border-radius: 2px;
+
+      transform: scaleX(0.4);
+      transform-origin: center;
+      transition: transform 0.3s ease;
+    }
+
+    body.loaded .title::after {
+      transform: scaleX(1);
     }
 
     /* CARD */
     .card {
       background: #2E1B2F;
-      padding: 30px 20px;
+      padding: 28px 22px;
       border-radius: 20px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 18px;
+      gap: 16px;
+
+      width: 65%;
+      max-width: 280px;
+      margin: 0 auto;
     }
 
     /* FOTO */
     .profile-img {
-      width: 130px;
-      height: 130px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       object-fit: cover;
 
@@ -78,12 +99,6 @@
       box-shadow: 
         0 8px 25px rgba(0,0,0,0.6),
         0 0 0 4px rgba(246,195,46,0.15);
-
-      transition: all 0.25s ease;
-    }
-
-    .profile-img:hover {
-      transform: scale(1.06);
     }
 
     /* NAMA */
@@ -92,49 +107,77 @@
       font-weight: 600;
     }
 
-    /* QUOTE */
+    /* QUOTE (FIX KIRI + KANAN) */
     .quote {
       font-size: 14px;
       font-style: italic;
       color: rgba(255,255,255,0.8);
       line-height: 1.6;
 
-      max-width: 280px;
+      max-width: 240px;
       position: relative;
+      padding: 0 10px;
     }
 
     .quote::before {
       content: "“";
-      font-size: 28px;
+      font-size: 26px;
       color: #F6C32E;
       position: absolute;
-      left: -10px;
-      top: -10px;
+      left: -8px;
+      top: -8px;
     }
 
-    /* BUTTON */
-    .btn-back {
-      margin-top: 25px;
-      padding: 10px 20px;
-      border-radius: 10px;
+    .quote::after {
+      content: "”";
+      font-size: 26px;
+      color: #F6C32E;
+      position: absolute;
+      right: -8px;
+      bottom: -8px;
+    }
+
+    /* BUTTON HOME (SAMA KAYAK MENU) */
+    .btn-home {
+      width: 60px;
+      height: 60px;
+
+      border-radius: 16px;
       border: none;
       cursor: pointer;
 
-      background: #F6C32E;
-      color: #2E1B2F;
-      font-weight: 600;
+      background: #2E1B2F;
+      color: #F8F9FA;
 
-      box-shadow: 0 5px 0 #d4a91f;
+      font-size: 24px;
+
+      margin: 25px auto 0 auto;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
       transition: all 0.15s ease;
     }
 
-    .btn-back:hover {
+    .btn-home:hover {
       transform: translateY(-2px);
     }
 
-    .btn-back:active {
+    .btn-home:active {
       transform: translateY(2px);
-      box-shadow: 0 2px 0 #d4a91f;
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 16px;
+
+      width: 100%;
+      text-align: center;
+
+      font-size: 12px;
+      opacity: 0.5;
     }
 
   </style>
@@ -144,12 +187,11 @@
 
   <div class="container">
 
-    <div class="title">Profil Pengembang</div>
+    <h1 class="title">Profil Pengembang</h1>
 
     <div class="card">
 
-      <!-- FOTO DARI GITHUB -->
-      <img src="image/foto-diri.jpg" alt="Foto Profil" class="profile-img">
+      <img src="image/foto-diri.jpg" class="profile-img">
 
       <div class="name">Mahadhitia</div>
 
@@ -161,9 +203,29 @@
 
     </div>
 
-    <button class="btn-back" onclick="history.back()">Kembali</button>
+    <!-- 🔥 GANTI JADI ICON HOME -->
+    <button class="btn-home" onclick="go('index.html')">
+      🏠
+    </button>
 
   </div>
+
+  <div class="footer">
+    Dibuat oleh Mahadhitia
+  </div>
+
+  <script>
+    function go(url) {
+      window.location.href = url;
+    }
+  </script>
+
+  <!-- 🔥 WAJIB UNTUK ANIMASI GARIS -->
+  <script>
+    window.onload = () => {
+      document.body.classList.add("loaded");
+    }
+  </script>
 
 </body>
 </html>

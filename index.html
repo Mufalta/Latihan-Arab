@@ -73,19 +73,18 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-    
       gap: 18px;
     
-      width: fit-content; /* 🔥 KUNCI UTAMA */
-      margin: 0 auto;     /* 🔥 tetap center */
+      width: 100%;
+      max-width: 320px; /* 🔥 BATAS IDEAL */
+      margin: 0 auto;
     }
     
     /* BUTTON */
     .btn {
-      width: 70%;
-      max-width: 180px;
-      height: 85px;
-  
+      width: 100%; /* 🔥 ikut card */
+      height: 90px;
+    
       border-radius: 16px;
       border: none;
       cursor: pointer;
@@ -104,6 +103,7 @@
       box-shadow: 0 6px 0 #d4a91f;
     
       transition: all 0.15s ease;
+      white-space: nowrap;
     }
     
     /* INTERACTION */

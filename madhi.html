@@ -315,7 +315,7 @@
       </div>
     </div>
     
-    <button class="btn-back" onclick="goMenu()">
+    <button class="btn-back" onclick="go('menu.html')">
       ⬅️
     </button>
     
@@ -332,11 +332,13 @@
   </script>
 
   <script>
-    function goMenu() {
+    function go(url) {
       document.body.classList.add("fade-out");
     
+      document.body.style.pointerEvents = "none"; // 🔥 anti spam klik
+    
       setTimeout(() => {
-        window.location.href = "menu.html";
+        window.location.href = url;
       }, 300);
     }
   </script>

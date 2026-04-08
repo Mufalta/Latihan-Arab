@@ -8,28 +8,33 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+    
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
       background: #4B2E4C;
       color: #F8F9FA;
     
-      height: 100vh;
+      min-height: 100vh; /* 🔥 ganti dari height */
     
       display: flex;
       justify-content: center;
       align-items: center;
+    
+      padding: 20px; /* 🔥 biar ga nabrak atas bawah */
     }
     
-    /* biar benar-benar center */
+    /* CONTAINER */
     .container {
       text-align: center;
       width: 100%;
       max-width: 500px;
-    
-      transform: translateY(-5%); /* 🔥 ini kunci biar ga terlalu ke bawah */
     }
     
+    /* TITLE */
     h1 {
       font-size: clamp(28px, 5vw, 42px);
       font-weight: 800;
@@ -39,7 +44,7 @@
     
     .subtitle {
       opacity: 0.8;
-      margin-bottom: 35px;
+      margin-bottom: 30px;
     }
     
     /* CARD */
@@ -50,14 +55,14 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     
       display: flex;
-      flex-direction: column; /* 🔥 paksa ke bawah */
-      gap: 16px; /* 🔥 jarak antar tombol (fix utama) */
+      flex-direction: column;
+      gap: 20px; /* 🔥 diperbesar biar lega */
     }
     
     /* BUTTON */
     .btn {
       width: 100%;
-      height: 90px;
+      height: 100px; /* 🔥 lebih tinggi biar napas */
     
       border-radius: 16px;
       border: none;
@@ -67,17 +72,19 @@
       color: #2E1B2F;
     
       display: flex;
-      flex-direction: column; /* 🔥 icon tetap di atas */
+      flex-direction: column;
       justify-content: center;
       align-items: center;
     
       font-weight: 600;
+      font-size: 16px;
     
       box-shadow: 0 6px 0 #d4a91f;
     
       transition: all 0.15s ease;
     }
     
+    /* HOVER & CLICK */
     .btn:hover {
       transform: translateY(-2px);
     }
@@ -87,19 +94,24 @@
       box-shadow: 0 2px 0 #d4a91f;
     }
     
+    /* ICON */
     .icon {
-      font-size: 24px;
-      margin-bottom: 6px; /* 🔥 jarak icon ke teks */
+      font-size: 26px;
+      margin-bottom: 8px;
     }
     
-    /* MOBILE */
+    /* MOBILE FIX */
     @media (max-width: 480px) {
+      body {
+        align-items: center; /* tetap center */
+      }
+    
       .btn {
-        height: 85px;
+        height: 95px;
       }
     
       .card {
-        gap: 14px; /* 🔥 samakan dengan menu */
+        gap: 18px; /* 🔥 spacing lebih enak */
       }
     }
   </style>

@@ -45,7 +45,7 @@
       color: #F6C32E;
     
       text-align: center;
-      margin-bottom: 10px;
+      margin-bottom: 35px;
       line-height: 1.2;
     
       letter-spacing: 0.5px;
@@ -78,6 +78,17 @@
       .title {
         font-size: 32px;
       }
+    }
+
+    .subtitle-bottom {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: 0.4s ease;
+    }
+    
+    body.loaded .subtitle-bottom {
+      opacity: 0.7;
+      transform: translateY(0);
     }
     
     /* CARD */
@@ -172,6 +183,10 @@
       </button>
 
     </div>
+  </div>
+
+  <div class="subtitle-bottom">
+    Platform Latihan Bahasa Arab
   </div>
 
   <div class="footer">

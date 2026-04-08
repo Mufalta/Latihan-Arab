@@ -81,20 +81,21 @@
     }
 
     .subtitle-bottom {
-      font-size: 15px;        /* 🔥 lebih besar */
-      font-weight: 500;       /* 🔥 lebih tegas */
-      letter-spacing: 0.4px;  /* 🔥 biar clean */
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.4px;
     
-      color: rgba(255,255,255,0.75); /* putih soft */
+      color: rgba(255,255,255,0.75);
     
       margin: 10px auto 30px auto;
     
       text-align: center;
       max-width: 500px;
     
-      opacity: 0;
-      transform: translateY(10px);
-      transition: 0.4s ease;
+      /* 🔥 HAPUS ANIMASI */
+      opacity: 1;
+      transform: none;
+      transition: none;
     }
     
     /* CARD */
@@ -204,11 +205,6 @@
       window.location.href = url;
     }
   </script>
-
-  <script>
-  window.onload = () => {
-    document.body.classList.add("loaded");
-  }
     
 </script>
 

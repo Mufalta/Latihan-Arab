@@ -2,39 +2,168 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profil</title>
 
+  <!-- FONT (BIAR SAMA DENGAN INDEX) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
       background: #4B2E4C;
-      color: white;
-      font-family: sans-serif;
+      color: #F8F9FA;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
       text-align: center;
-      padding: 30px;
+      width: 100%;
+      max-width: 400px;
+      padding: 20px;
     }
 
-    h1 {
+    /* TITLE */
+    .title {
+      font-size: 32px;
+      font-weight: 800;
       color: #F6C32E;
+      margin-bottom: 30px;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 10px;
     }
 
-    button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
+    .title::after {
+      content: "";
+      display: block;
+      width: 70%;
+      height: 4px;
+      background: #F6C32E;
+      margin: 10px auto 0;
+      border-radius: 2px;
     }
+
+    /* CARD */
+    .card {
+      background: #2E1B2F;
+      padding: 30px 20px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+    }
+
+    /* FOTO */
+    .profile-img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+
+      border: 4px solid #F6C32E;
+
+      box-shadow: 
+        0 8px 25px rgba(0,0,0,0.6),
+        0 0 0 4px rgba(246,195,46,0.15);
+
+      transition: all 0.25s ease;
+    }
+
+    .profile-img:hover {
+      transform: scale(1.06);
+    }
+
+    /* NAMA */
+    .name {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    /* QUOTE */
+    .quote {
+      font-size: 14px;
+      font-style: italic;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.6;
+
+      max-width: 280px;
+      position: relative;
+    }
+
+    .quote::before {
+      content: "“";
+      font-size: 28px;
+      color: #F6C32E;
+      position: absolute;
+      left: -10px;
+      top: -10px;
+    }
+
+    /* BUTTON */
+    .btn-back {
+      margin-top: 25px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+
+      background: #F6C32E;
+      color: #2E1B2F;
+      font-weight: 600;
+
+      box-shadow: 0 5px 0 #d4a91f;
+      transition: all 0.15s ease;
+    }
+
+    .btn-back:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-back:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 0 #d4a91f;
+    }
+
   </style>
 </head>
 
 <body>
 
-  <h1>Profil Pengembang</h1>
+  <div class="container">
 
-  <p>Nama: Mahadhitia</p>
-  <p>Web ini dibuat untuk latihan bahasa Arab interaktif</p>
+    <div class="title">Profil Pengembang</div>
 
-  <button onclick="history.back()">Kembali</button>
+    <div class="card">
+
+      <!-- FOTO DARI GITHUB -->
+      <img src="image/foto-diri.jpg" alt="Foto Profil" class="profile-img">
+
+      <div class="name">Mahadhitia</div>
+
+      <div class="quote">
+        Web ini dibuat sebagai media latihan bahasa Arab interaktif 
+        untuk membantu memahami pola kata dan struktur kalimat 
+        secara lebih mudah dan menyenangkan.
+      </div>
+
+    </div>
+
+    <button class="btn-back" onclick="history.back()">Kembali</button>
+
+  </div>
 
 </body>
 </html>

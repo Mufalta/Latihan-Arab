@@ -28,6 +28,19 @@
       justify-content: center;
       align-items: flex-start;
       padding-top: 140px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      will-change: opacity;
+    }
+
+    /* saat halaman siap */
+    body.loaded {
+      opacity: 1;
+    }
+    
+    /* saat keluar halaman */
+    body.fade-out {
+      opacity: 0;
     }
 
     /* CONTAINER */
@@ -214,8 +227,12 @@
 
   <script>
     function go(url) {
+    document.body.classList.add("fade-out");
+  
+    setTimeout(() => {
       window.location.href = url;
-    }
+    }, 300);
+  }
   </script>
 
   <script>

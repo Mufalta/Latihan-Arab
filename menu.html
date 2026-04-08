@@ -104,34 +104,38 @@
       box-shadow: 0 2px 0 #d4a91f;
     }
 
-    /* BUTTON KEMBALI */
-    .btn-back {
+    /* BUTTON HOME */
+    .btn-home {
       width: 65%;
+      max-width: 280px;
       height: 55px;
-
+    
       border-radius: 16px;
       border: none;
       cursor: pointer;
-
-      background: #5A3A5C; /* 🔥 sama kayak "lihat jawaban" */
+    
+      background: #5A3A5C; /* 🔥 ungu muda */
       color: #F8F9FA;
-
-      font-weight: 600;
-      font-size: 14px;
-
+    
+      font-size: 20px;
+    
       margin: 25px auto 0 auto;
-
+    
       display: flex;
       justify-content: center;
       align-items: center;
-
+    
       transition: 0.15s;
     }
-
-    .btn-back:hover {
-      opacity: 0.9;
+    
+    .btn-home:hover {
+      transform: translateY(-2px);
     }
-
+    
+    .btn-home:active {
+      transform: translateY(2px);
+    }
+    
   </style>
 </head>
 
@@ -157,8 +161,8 @@
     </div>
 
     <!-- 🔥 tombol kembali pindah ke bawah -->
-    <button class="btn-back" onclick="history.back()">
-      ← Kembali
+    <button class="btn-home" onclick="go('index.html')">
+      🏠
     </button>
 
   </div>

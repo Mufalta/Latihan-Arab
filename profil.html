@@ -27,7 +27,7 @@
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      padding-top: 140px; /* 🔥 SAMA PERSIS MENU */
+      padding-top: 120px; /* 🔥 SAMA PERSIS MENU */
     }
 
     /* CONTAINER */
@@ -111,32 +111,40 @@
     .quote {
       font-size: 14px;
       font-style: italic;
-      color: rgba(255,255,255,0.8);
-      line-height: 1.6;
-
-      max-width: 240px;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.7;
+    
+      max-width: 230px;
+      margin: 0 auto;
+    
       position: relative;
-      padding: 0 10px;
+      text-align: center;
+    
+      padding: 10px 18px; /* 🔥 ruang kiri kanan biar kutip ga nabrak */
     }
-
+    
+    /* KUTIP KIRI */
     .quote::before {
       content: "“";
-      font-size: 26px;
+      font-size: 28px;
       color: #F6C32E;
+    
       position: absolute;
-      left: -8px;
-      top: -8px;
+      left: 0;
+      top: -6px;
     }
-
+    
+    /* KUTIP KANAN */
     .quote::after {
       content: "”";
-      font-size: 26px;
+      font-size: 28px;
       color: #F6C32E;
+    
       position: absolute;
-      right: -8px;
-      bottom: -8px;
+      right: 0;
+      bottom: -10px;
     }
-
+    
     /* BUTTON HOME (SAMA KAYAK MENU) */
     .btn-home {
       width: 60px;

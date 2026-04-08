@@ -73,17 +73,17 @@
     /* CARD */
     .card {
       background: #2E1B2F;
-      padding: 28px 22px;
+      padding: 30px 24px;
       border-radius: 20px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-
+    
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 16px;
-
-      width: 65%;
-      max-width: 280px;
+      gap: 18px;
+    
+      width: 80%;          /* 🔥 dari 65% → lebih lega */
+      max-width: 340px;    /* 🔥 dari 280px → ini kunci utama */
       margin: 0 auto;
     }
 
@@ -114,13 +114,13 @@
       color: rgba(255,255,255,0.85);
       line-height: 1.7;
     
-      max-width: 230px;
+      max-width: 280px;   /* 🔥 lebih lebar */
       margin: 0 auto;
     
       position: relative;
       text-align: center;
     
-      padding: 12px 20px 16px 20px; /* 🔥 ruang kiri kanan biar kutip ga nabrak */
+      padding: 14px 22px 18px 22px;
     }
     
     /* KUTIP KIRI */
@@ -130,19 +130,18 @@
       color: #F6C32E;
     
       position: absolute;
-      left: 0;
+      left: 4px;
       top: -6px;
     }
     
-    /* KUTIP KANAN */
     .quote::after {
       content: "”";
       font-size: 26px;
       color: #F6C32E;
     
       position: absolute;
-      right: 2px;
-      bottom: 2px; /* 🔥 kunci dekat baseline */
+      right: 6px;
+      bottom: 4px;
     }
     
     /* BUTTON HOME (SAMA KAYAK MENU) */
@@ -201,12 +200,17 @@
 
       <img src="image/foto-diri.jpg" class="profile-img">
 
-      <div class="name">Mahadhitia</div>
+      <div class="name">Muhammad Naufal Mahadhitia</div>
 
       <div class="quote">
-        Web ini dibuat sebagai media latihan bahasa Arab interaktif 
-        untuk membantu memahami pola kata dan struktur kalimat 
-        secara lebih mudah dan menyenangkan.
+        Assalamu’alaikum 👋  
+        Perkenalkan, saya Naufal dari Ciwidey – Bandung.  
+    
+        Saya suka belajar hal-hal yang saya minati, salah satunya bahasa Arab.  
+        Awalnya web ini saya buat untuk latihan pribadi, tapi semoga bisa bermanfaat juga untuk teman-teman.  
+    
+        Silakan digunakan dengan baik ya 🙂  
+        Syukran.
       </div>
 
     </div>

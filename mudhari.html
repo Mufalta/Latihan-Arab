@@ -340,9 +340,20 @@
   </script>
   
   <script>
-    window.onload = () => {
+    function showPage() {
+      document.body.classList.remove("fade-out");
       document.body.classList.add("loaded");
     }
+    
+    // saat load normal
+    window.onload = showPage;
+    
+    // 🔥 saat kembali pakai tombol browser / swipe
+    window.onpageshow = function(event) {
+      if (event.persisted) {
+        showPage();
+      }
+    };
   </script>
 
 </body>

@@ -236,11 +236,9 @@
     
       if (el) el.classList.add("fade-out");
     
-      document.body.style.pointerEvents = "none";
-    
       setTimeout(() => {
         window.location.href = url;
-      }, 300);
+      }, 250);
     }
   </script>
 
@@ -250,16 +248,22 @@
       const el = document.querySelector(".container");
       if (!el) return;
     
-      // pakai fade-in class (bukan loaded lagi)
+      // 🔥 RESET PAKSA (INI YANG SELAMATIN)
       el.classList.remove("fade-out");
-      el.classList.add("fade-in");
     
-      document.body.style.pointerEvents = "auto";
+      // optional
+      el.classList.add("fade-in");
     }
     
-    // WAJIB
     window.addEventListener("load", showPage);
     window.addEventListener("pageshow", showPage);
+    window.addEventListener("pageshow", (e) => {
+      const el = document.querySelector(".container");
+      if (!el) return;
+    
+      // 🔥 kalau dari cache/back
+      el.classList.remove("fade-out");
+    });
   </script>
 
 </body>

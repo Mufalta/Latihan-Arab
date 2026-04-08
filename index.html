@@ -48,11 +48,7 @@
       padding: 0 20px;
       margin: 0 auto;
       opacity: 1;
-      transition: opacity 0.35s ease;
-    }
-    
-    .container.loaded {
-      opacity: 1;
+      transition: opacity 0.3s ease;
     }
     
     .container.fade-out {
@@ -243,11 +239,8 @@
       const el = document.querySelector(".container");
       if (!el) return;
     
-      // 🔥 RESET PAKSA (INI YANG SELAMATIN)
+      // 🔥 PAKSA BALIK NORMAL
       el.classList.remove("fade-out");
-    
-      // optional
-      el.classList.add("fade-in");
     }
     
     window.addEventListener("load", showPage);

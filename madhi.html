@@ -39,16 +39,34 @@
       transform: translateY(-5vh);
     }
   
-    h1 {
-      font-size: 34px; /* 🔥 samain dengan menu */
+    .title {
+      font-size: 34px;
       font-weight: 800;
       color: #F6C32E;
+    
+      text-align: center;
       margin-bottom: 30px;
       line-height: 1.2;
+    
+      letter-spacing: 0.5px;
+      position: relative;
+    }
+    
+    /* 🔥 garis modern */
+    .title::after {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 4px;
+      background: #F6C32E;
+    
+      margin: 10px auto 0;
+      border-radius: 2px;
+      opacity: 0.9;
     }
 
     @media (max-width: 480px) {
-      h1 {
+      .title {
         font-size: 28px;
       }
     }
@@ -243,7 +261,7 @@
 <audio id="clickSound" preload="auto" src="sound/denielcz-immersivecontrol-button-click-sound-463065.mp3"></audio>
 
   <div class="app">
-    <h1>Fi'il Madhi</h1>
+    <h1 class="title">Fi'il Madhi</h1>
 
     <div class="card">
 

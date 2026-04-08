@@ -53,6 +53,7 @@
       display: inline-block;
     }
     
+    /* 🔥 garis modern */
     .title::after {
       content: "";
       display: block;
@@ -64,14 +65,19 @@
       margin: 10px auto 0;
       border-radius: 2px;
       opacity: 0.9;
-    
       transform: scaleX(0.4);
       transform-origin: center;
       transition: 0.3s ease;
     }
-    
+
     body.loaded .title::after {
       transform: scaleX(1);
+    }
+
+    @media (max-width: 480px) {
+      .title {
+        font-size: 28px;
+      }
     }
   
     .card {
@@ -311,14 +317,14 @@
   </script>
 
   <script>
-    window.onload = () => {
-      document.body.classList.add("loaded");
-    }
-  </script>
-
-  <script>
     function goMenu() {
       window.location.href = "menu.html";
+    }
+  </script>
+  
+  <script>
+    window.onload = () => {
+      document.body.classList.add("loaded");
     }
   </script>
 

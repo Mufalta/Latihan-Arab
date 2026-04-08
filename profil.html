@@ -21,9 +21,8 @@
       justify-content: center;
       align-items: flex-start;
     
-      padding: 60px 0 40px 0; /* 🔥 atas & bawah ada ruang */
-      opacity: 0;
-      transition: opacity 0.35s ease;
+      padding: 60px 0 40px 0;
+      opacity: 1;
       will-change: opacity;
       }
   
@@ -41,6 +40,16 @@
       width: 100%;
       max-width: 700px;
       padding: 0 20px;
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+    
+    .container.loaded {
+      opacity: 1;
+    }
+    
+    .container.fade-out {
+      opacity: 0;
     }
 
     /* TITLE */
@@ -223,9 +232,11 @@
 
   <script>
     function go(url) {
-    document.body.classList.add("fade-out");
+    const el = document.querySelector(".container");
   
-    document.body.style.pointerEvents = "none"; // 🔥 anti spam klik
+    if (el) el.classList.add("fade-out");
+  
+    document.body.style.pointerEvents = "none";
   
     setTimeout(() => {
       window.location.href = url;
@@ -236,16 +247,14 @@
   <!-- 🔥 WAJIB UNTUK ANIMASI GARIS -->
   <script>
     function showPage() {
-      document.body.classList.add("loaded");
-      document.body.classList.remove("fade-out");
-      document.body.style.pointerEvents = "auto";
-    }
-    
-    // load normal
-    window.addEventListener("load", showPage);
-    
-    // 🔥 ini kunci utama (fix blank + back)
-    window.addEventListener("pageshow", showPage);
+    const el = document.querySelector(".container");
+    if (!el) return;
+  
+    el.classList.add("loaded");
+    el.classList.remove("fade-out");
+  
+    document.body.style.pointerEvents = "auto";
+  }
   </script>
 
 </body>

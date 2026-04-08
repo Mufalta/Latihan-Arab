@@ -26,6 +26,19 @@
     
       display: block;
       padding-top: 120px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      will-change: opacity;
+    }
+
+    /* saat halaman siap */
+    body.loaded {
+      opacity: 1;
+    }
+    
+    /* saat keluar halaman */
+    body.fade-out {
+      opacity: 0;
     }
     
     /* CONTAINER */
@@ -206,7 +219,11 @@
 
   <script>
     function go(url) {
-      window.location.href = url;
+      document.body.classList.add("fade-out");
+    
+      setTimeout(() => {
+        window.location.href = url;
+      }, 300); // harus sama dengan CSS transition
     }
   </script>
 

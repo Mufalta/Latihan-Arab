@@ -39,16 +39,41 @@
     }
 
     /* TITLE */
-    h1 {
-      font-size: 34px; /* 🔥 lebih proporsional */
+    .title {
+      font-size: 34px;
       font-weight: 800;
       color: #F6C32E;
+    
+      text-align: center;
       margin-bottom: 30px;
       line-height: 1.2;
+    
+      letter-spacing: 0.5px;
+      position: relative;
     }
-
+    
+    /* garis animasi */
+    .title::after {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 4px;
+      background: #F6C32E;
+    
+      margin: 10px auto 0;
+      border-radius: 2px;
+      opacity: 0.9;
+    
+      transform: scaleX(0);
+      transition: 0.3s ease;
+    }
+    
+    body.loaded .title::after {
+      transform: scaleX(1);
+    }
+    
     @media (max-width: 480px) {
-      h1 {
+      .title {
         font-size: 28px;
       }
     }
@@ -156,7 +181,7 @@
 <body>
 
   <div class="container">
-    <h1>Pilih Mode</h1>
+    <h1 class="title">Pilih Mode</h1>
 
     <div class="card">
 
@@ -190,6 +215,13 @@
       window.location.href = url;
     }
   </script>
+
+  <script>
+  window.onload = () => {
+    document.body.classList.add("loaded");
+  }
+    
+</script>
 
 </body>
 </html>

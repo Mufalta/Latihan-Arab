@@ -29,7 +29,7 @@
       align-items: flex-start;
       padding-top: 140px;
       opacity: 0;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
       will-change: opacity;
     }
 
@@ -249,9 +249,20 @@
     
     // back / swipe
     window.onpageshow = function(event) {
-      if (event.persisted) {
-        showPage();
-      }
+      // 🔥 selalu trigger (bukan cuma persisted)
+      
+      document.body.classList.remove("fade-out");
+    
+      // reset dulu ke transparan biar animasi jalan
+      document.body.classList.remove("loaded");
+    
+      // paksa reflow biar animasi ke-trigger
+      void document.body.offsetWidth;
+    
+      // baru tampilkan dengan animasi
+      document.body.classList.add("loaded");
+    
+      document.body.style.pointerEvents = "auto";
     };
     
     // sebelum pindah halaman

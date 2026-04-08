@@ -23,7 +23,7 @@
     
       padding: 60px 0 40px 0; /* 🔥 atas & bawah ada ruang */
       opacity: 0;
-      transition: opacity 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+      transition: opacity 0.35s ease;
       will-change: opacity;
       }
   
@@ -236,36 +236,22 @@
   <!-- 🔥 WAJIB UNTUK ANIMASI GARIS -->
   <script>
     function showPage() {
-      document.body.classList.remove("fade-out");
-      document.body.classList.add("loaded");
       document.body.style.pointerEvents = "auto";
+    
+      // reset state
+      document.body.classList.remove("loaded");
+    
+      // paksa browser sadar ada perubahan
+      requestAnimationFrame(() => {
+        document.body.classList.add("loaded");
+      });
     }
     
-    // load normal
-    window.onload = showPage;
+    // saat pertama load
+    window.addEventListener("load", showPage);
     
-    // back / swipe
-    window.onpageshow = function(event) {
-      // 🔥 selalu trigger (bukan cuma persisted)
-      
-      document.body.classList.remove("fade-out");
-    
-      // reset dulu ke transparan biar animasi jalan
-      document.body.classList.remove("loaded");
-    
-      // paksa reflow biar animasi ke-trigger
-      void document.body.offsetWidth;
-    
-      // baru tampilkan dengan animasi
-      document.body.classList.add("loaded");
-    
-      document.body.style.pointerEvents = "auto";
-    };
-    
-    // sebelum pindah halaman
-    window.onbeforeunload = () => {
-      document.body.classList.remove("loaded");
-    };
+    // saat back / swipe / cache
+    window.addEventListener("pageshow", showPage);
   </script>
 
 </body>

@@ -26,8 +26,8 @@
     
       display: block;
       padding-top: 120px;
-      opacity: 0;
-      transition: opacity 0.35s ease;
+      opacity: 1; /* 🔥 FIX UTAMA */
+      transition: none;
       will-change: opacity;
     }
 
@@ -48,6 +48,16 @@
       max-width: 700px; /* 🔥 dipersempit */
       padding: 0 20px;
       margin: 0 auto;
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+    
+    .container.loaded {
+      opacity: 1;
+    }
+    
+    .container.fade-out {
+      opacity: 0;
     }
     
     /* TITLE */
@@ -219,29 +229,28 @@
 
   <script>
     function go(url) {
-      document.body.classList.add("fade-out");
-    
-      // 🔥 cegah klik spam
-      document.body.style.pointerEvents = "none";
-    
-      setTimeout(() => {
-        window.location.href = url;
-      }, 300);
-    }
+    const el = document.querySelector(".container");
+  
+    if (el) el.classList.add("fade-out");
+  
+    document.body.style.pointerEvents = "none";
+  
+    setTimeout(() => {
+      window.location.href = url;
+    }, 300);
+  }
   </script>
 
   <script>
     function showPage() {
-      document.body.classList.add("loaded");
-      document.body.classList.remove("fade-out");
-      document.body.style.pointerEvents = "auto";
-    }
-    
-    // load normal
-    window.addEventListener("load", showPage);
-    
-    // 🔥 ini kunci utama (fix blank + back)
-    window.addEventListener("pageshow", showPage);
+    const el = document.querySelector(".container");
+    if (!el) return;
+  
+    el.classList.add("loaded");
+    el.classList.remove("fade-out");
+  
+    document.body.style.pointerEvents = "auto";
+  }
   </script>
 
 </body>

@@ -196,6 +196,39 @@
       opacity: 1;
       transform: scale(1.2);
     }
+
+    .btn-back {
+      width: 60px;
+      height: 60px;
+    
+      border-radius: 16px;
+      border: none;
+      cursor: pointer;
+    
+      background: #2E1B2F; /* ungu gelap */
+      color: #F8F9FA;
+    
+      font-size: 24px;
+    
+      margin: 25px auto 0 auto;
+    
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    
+      transition: all 0.15s ease;
+    }
+    
+    .btn-back:hover {
+      transform: translateY(-2px);
+    }
+    
+    .btn-back:active {
+      transform: translateY(2px);
+    }
+    
   </style>
 </head>
 
@@ -231,6 +264,10 @@
         <button class="answer-btn" onclick="handleClick(this); showAnswer()">
           Lihat Jawaban
         </button>
+
+        <button class="btn-back" onclick="goMenu()">
+          ⬅️
+        </button>
       </div>
 
     </div>
@@ -244,6 +281,12 @@
   <script>
     mode = "madhi";
     buildPool();
+  </script>
+
+  <script>
+    function goMenu() {
+      window.location.href = "menu.html";
+    }
   </script>
 
 </body>

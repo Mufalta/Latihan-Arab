@@ -339,16 +339,22 @@
     function showPage() {
       document.body.classList.remove("fade-out");
       document.body.classList.add("loaded");
+      document.body.style.pointerEvents = "auto";
     }
     
-    // saat load normal
+    // load normal
     window.onload = showPage;
     
-    // 🔥 saat kembali pakai tombol browser / swipe
+    // back / swipe
     window.onpageshow = function(event) {
       if (event.persisted) {
         showPage();
       }
+    };
+    
+    // sebelum pindah halaman
+    window.onbeforeunload = () => {
+      document.body.classList.remove("loaded");
     };
   </script>
 

@@ -51,15 +51,22 @@
       letter-spacing: 0.5px;
       position: relative;
       display: inline-block;
+      padding-bottom: 12px;
     }
     
     /* garis animasi */
     .title::after {
       content: "";
       display: block;
+      position: absolute; /* 🔥 kunci utama */
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%) scaleX(0);
+    
       width: 75%;
       max-width: 100%;
       height: 4px;
+    
       background: #F6C32E;
     
       margin: 12px auto 0;
@@ -67,7 +74,9 @@
       opacity: 0.9;
     
       transform: scaleX(0);
-      transition: 0.3s ease;
+      transform-origin: center; /* 🔥 TAMBAHAN PENTING */
+    
+      transition: transform 0.3s ease; /* 🔥 lebih spesifik */
     }
     
     body.loaded .title::after {

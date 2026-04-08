@@ -227,12 +227,14 @@
 
   <script>
     function go(url) {
-    document.body.classList.add("fade-out");
-  
-    setTimeout(() => {
-      window.location.href = url;
-    }, 300);
-  }
+      document.body.classList.add("fade-out");
+    
+      document.body.style.pointerEvents = "none"; // 🔥 penting
+    
+      setTimeout(() => {
+        window.location.href = url;
+      }, 300);
+    }
   </script>
 
   <script>

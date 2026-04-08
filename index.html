@@ -12,31 +12,34 @@
       box-sizing: border-box;
     }
     
-    body {
+    html, body {
       margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden; /* 🔥 MATIIN SCROLL TOTAL */
+    }
+    
+    body {
       font-family: 'Inter', sans-serif;
       background: #4B2E4C;
       color: #F8F9FA;
     
-      min-height: 100vh; /* 🔥 ganti dari height */
-    
       display: flex;
       justify-content: center;
       align-items: center;
-    
-      padding: 20px; /* 🔥 biar ga nabrak atas bawah */
     }
     
     /* CONTAINER */
     .container {
       text-align: center;
       width: 100%;
-      max-width: 500px;
+      max-width: 400px; /* 🔥 dipersempit */
+      padding: 0 20px;
     }
     
     /* TITLE */
     h1 {
-      font-size: clamp(28px, 5vw, 42px);
+      font-size: clamp(26px, 5vw, 40px);
       font-weight: 800;
       color: #F6C32E;
       margin-bottom: 10px;
@@ -56,13 +59,15 @@
     
       display: flex;
       flex-direction: column;
-      gap: 20px; /* 🔥 diperbesar biar lega */
+      align-items: center; /* 🔥 tombol tidak full */
+      gap: 18px;
     }
     
     /* BUTTON */
     .btn {
-      width: 100%;
-      height: 100px; /* 🔥 lebih tinggi biar napas */
+      width: 85%; /* 🔥 lebih sempit */
+      max-width: 260px; /* 🔥 batas biar ga melebar */
+      height: 95px;
     
       border-radius: 16px;
       border: none;
@@ -84,7 +89,7 @@
       transition: all 0.15s ease;
     }
     
-    /* HOVER & CLICK */
+    /* INTERACTION */
     .btn:hover {
       transform: translateY(-2px);
     }
@@ -98,21 +103,6 @@
     .icon {
       font-size: 26px;
       margin-bottom: 8px;
-    }
-    
-    /* MOBILE FIX */
-    @media (max-width: 480px) {
-      body {
-        align-items: center; /* tetap center */
-      }
-    
-      .btn {
-        height: 95px;
-      }
-    
-      .card {
-        gap: 18px; /* 🔥 spacing lebih enak */
-      }
     }
   </style>
 </head>
